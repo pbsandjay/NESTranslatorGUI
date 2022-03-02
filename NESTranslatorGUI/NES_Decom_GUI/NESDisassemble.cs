@@ -1,26 +1,32 @@
 ﻿using System;
-using System.IO;
-using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.IO;
+using NES_Decom;
+using NES_Decom_GUI;
 
 namespace NES_Decom
 {
-    class NESDisassemble
+    class NESDisassemble : NESForm
     {
         public unsafe int Disassembler(byte* codeBuffer, int pc, string outputName)
         {
-
 
             string fileName = outputName;
 
             byte* code = &codeBuffer[pc];
 
-            int opBytes = 1; //the default length of the op
+            int opBytes = 1; //the default length of the OP Code
 
+            using (var writer = new StreamWriter(fileName, true, Encoding.ASCII))
+            { 
 
-            using (var writer = new StreamWriter(fileName, true))
-            {
 
                 writer.AutoFlush = true;
 
@@ -182,13 +188,14 @@ namespace NES_Decom
 
 
 
-                        //https://www.youtube.com/watch?v=jSwV-4qs3mM
+                        //https://www.youtube.com/watch?v=Dw3ghsvFCZI
 
                 }
 
 
                 return opBytes;
             }
+
         }
 
     }

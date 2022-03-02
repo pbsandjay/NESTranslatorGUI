@@ -22,14 +22,19 @@ namespace NES_Decom_GUI
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        public void Form1_Load(object sender, EventArgs e)
         {
-            TextDirectory.Text = ""; //Zero out the text for the txt file directory on load
-            ROMDirectory.Text = ""; //Zero out the text for the ROM file directory on load
-            gameName_Lb.Text = ""; //Replace placeholderText with nothing to be called later
-            ROMType_Lb.Text = ""; //Replace placeholderText with nothing to be called later
-            mirroring_Lb.Text = "";
-            
+            NESDisassemble Test = new NESDisassemble();
+
+            TextDirectory.Text = ""; //Text File Directory?
+            ROMDirectory.Text = ""; //ROM Directory?
+            gameName_Lb.Text = ""; //ROM Name?
+            ROMType_Lb.Text = ""; //Type of ROM?
+            mirroring_Lb.Text = ""; //Type of mirroring?         
+            sram_Lb.Text = ""; //SRAM?
+            trainer_Lb.Text = ""; //Trainer?
+            vram_Lb.Text = ""; //VRAM type?
+            testBox.Text = "";
 
         }
 
@@ -60,7 +65,8 @@ namespace NES_Decom_GUI
             }
 
             string filename = Path.GetFileNameWithoutExtension(ROMSel.FileName);
-            gameName_Lb.Text = filename;
+            string upper = filename.ToUpper();
+            gameName_Lb.Text = upper;
 
         }
 
@@ -76,6 +82,11 @@ namespace NES_Decom_GUI
             }
         }
 
+        private void sram_Lb_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void TextLabel_Click(object sender, EventArgs e)
         {
 
@@ -88,7 +99,7 @@ namespace NES_Decom_GUI
 
         private void gameName_Lb_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void ROMType_Lb_Click(object sender, EventArgs e)
@@ -100,7 +111,14 @@ namespace NES_Decom_GUI
         {
 
         }
+        private void trainer_Lb_Click(object sender, EventArgs e)
+        {
 
+        }
+        private void vram_Lb_Click(object sender, EventArgs e)
+        {
+
+        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -144,85 +162,94 @@ namespace NES_Decom_GUI
                 char[] flag6Char = flag6Convert.ToCharArray();
 
 
-                using (StreamWriter sr = new StreamWriter(TextDirectory.Text, true, Encoding.ASCII))
+                using (StreamWriter sr = new StreamWriter(TextDirectory.Text, false, Encoding.ASCII))
                 {
 
 
                     if (flag6Char[4] == '0')
                     {
-                        sr.WriteLine("{0} uses Horizontal Mirroring", gameName_Lb);
-                        mirroring_Lb.Text = gameName_Lb + " uses Horizontal Mirroring";
+                        sr.WriteLine(mirroring_Lb.Text = gameName_Lb.Text + " uses Horizontal Mirroring");
+                        mirroring_Lb.Text = gameName_Lb.Text + " uses Horizontal Mirroring";
 
                     }
                     else
                     {
-                        sr.WriteLine("{0} uses Vertical Mirroring", gameName_Lb);
+                        sr.WriteLine(mirroring_Lb.Text = gameName_Lb.Text + " uses Vertical Mirroring");
                         mirroring_Lb.Text = gameName_Lb.Text + " uses Vertical Mirroring";
-                         
+
+
                     }
-                    /*
+
                     if (flag6Char[3] == '0')
                     {
-                        data.WriteLine("{0} does not use SRAM", gameName_Lb); Console.WriteLine("{0} does not use SRAM", gameName_Lb);
+                        sr.WriteLine(sram_Lb.Text = gameName_Lb.Text + " does not use SRAM");
+                        sram_Lb.Text = gameName_Lb.Text + " does not use SRAM";
                     }
                     else
                     {
-                        data.WriteLine("{0} uses SRAM", gameName_Lb); Console.WriteLine("{0} uses SRAM", gameName_Lb);
+                        sr.WriteLine(sram_Lb.Text = gameName_Lb.Text + " uses SRAM");
+                        sram_Lb.Text = gameName_Lb.Text + " uses SRAM";
                     }
 
                     if (flag6Char[2] == '0')
                     {
-                        data.WriteLine("{0} does not use a trainer", gameName_Lb); Console.WriteLine("{0} does not use a trainer", gameName_Lb);
+                        sr.WriteLine(trainer_Lb.Text = gameName_Lb.Text + " does not use a Trainer");
+                        trainer_Lb.Text = gameName_Lb.Text + " does not use a Trainer";
                     }
                     else
                     {
-                        data.WriteLine("{0} uses a trainer", gameName_Lb); Console.WriteLine("{0} uses a trainer", gameName_Lb);
+                        sr.WriteLine(trainer_Lb.Text = gameName_Lb.Text + " uses a Trainer");
+                        trainer_Lb.Text = gameName_Lb.Text + " uses a Trainer";
                     }
 
                     if (flag6Char[1] == '0')
                     {
-                        data.WriteLine("{0} does not use four-screen VRAM", gameName_Lb); Console.WriteLine("{0} does not use four-screen VRAM", gameName_Lb);
+                        sr.WriteLine(vram_Lb.Text = gameName_Lb.Text + " does not use four-screen VRAM");
+                        vram_Lb.Text = gameName_Lb.Text + " does not use four-screen VRAM";
                     }
                     else
                     {
-                        data.WriteLine("{0} uses four-screen VRAM", gameName_Lb); 
-                        Console.WriteLine("{0} uses four-screen VRAM", gameName_Lb);
+                        sr.WriteLine(vram_Lb.Text = gameName_Lb.Text + " uses four-screen VRAM");
+                        vram_Lb.Text = gameName_Lb.Text + " uses four-screen VRAM";
 
                     }
 
-                    //Trying a new way to test file checking logic... Kind of. Will mature over time. 
-                    //I might need to take Bikini Bottom and push it somewhere else so it's not just randomly placed within ROM flag scraping code. 
                     bool iNESFormat = false;
                     if (Convert.ToChar(byteArray[0]) == 'N' && Convert.ToChar(byteArray[1]) == 'E' && Convert.ToChar(byteArray[2]) == 'S' && byteArray[3] == 0x1A)
                     {
-                       sr.WriteLine("This uses the iNES 1.0 ROM header"); 
-                       ROMType_Lb.Text = "This uses the iNES 1.0 ROM header";
-                       iNESFormat = true;
+                        sr.WriteLine(ROMType_Lb.Text = gameName_Lb.Text + " uses the iNES 1.0 ROM header");
+                        ROMType_Lb.Text = gameName_Lb.Text + " uses the iNES 1.0 ROM header";
+                        sr.WriteLine("--------------------START OF CODE----------------");
+                        iNESFormat = true;
                     }
                     if (iNESFormat == true && (byteArray[7] & 0x0c) == 0x08)
                     {
-                       sr.WriteLine("This uses the iNES 2.0 ROM header"); 
-                       ROMType_Lb.Text = "This uses the iNES 2.0 ROM header";
-                   }
+                        sr.WriteLine(ROMType_Lb.Text = gameName_Lb.Text + " uses the iNES 2.0 ROM header");
+                        ROMType_Lb.Text = gameName_Lb.Text + " uses the iNES 2.0 ROM header";
+                        sr.WriteLine("--------------------START OF CODE----------------");
+                    }
 
-                   sr.Close();
+
+                    sr.AutoFlush = true;
                 }
 
 
-               fixed (byte* ToArrayBytes = byteArray)
-               {
-                   NESDisassemble nes = new NESDisassemble();
+                fixed (byte* ToArrayBytes = byteArray)
+                {
 
-                   int pc = NESheader; //we want to start the PC at where the the header ends. 
+                    NESDisassemble nes = new NESDisassemble();
 
-                   while (pc < byteArray.Length - (CHRSize + pc))  //16 -> end of PRG ROM
-                   {
-                       pc += nes.Disassembler(ToArrayBytes, pc, TextDirectory.Text);
-                   }
-               }
-           }*/
+                    int pc = NESheader; //we want to start the PC at where the the header ends. 
+
+                    while (pc < byteArray.Length - (CHRSize + pc))  //16 -> end of PRG ROM
+                    {
+                        pc += nes.Disassembler(ToArrayBytes, pc, TextDirectory.Text);
+                    }
                 }
             }
+        }
+        public void testBox_TextChanged_2(object sender, EventArgs e)
+        {
         }
     }
 }
