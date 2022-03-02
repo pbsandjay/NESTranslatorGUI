@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31727.386
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NES_Decom_GUI", "NES_Decom_GUI\NES_Decom_GUI.csproj", "{E2315F76-C98C-4731-8A7F-7C43C7956FE2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NES Translator GUI", "NES_Decom_GUI\NES Translator GUI.csproj", "{E2315F76-C98C-4731-8A7F-7C43C7956FE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -37,8 +37,15 @@ namespace NES_Decom_GUI
             this.TextDirectory = new System.Windows.Forms.Label();
             this.OpenROMDialog = new System.Windows.Forms.OpenFileDialog();
             this.OpenTextDialog = new System.Windows.Forms.OpenFileDialog();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.ROMType_Lb = new System.Windows.Forms.Label();
+            this.gameName_Lb = new System.Windows.Forms.Label();
+            this.romInfo_Lb = new System.Windows.Forms.Label();
+            this.translate_Btn = new System.Windows.Forms.Button();
+            this.mirroring_Lb = new System.Windows.Forms.Label();
+            this.sram_Lb = new System.Windows.Forms.Label();
+            this.vram_Lb = new System.Windows.Forms.Label();
+            this.trainer_Lb = new System.Windows.Forms.Label();
+            this.testBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -109,21 +116,111 @@ namespace NES_Decom_GUI
             // 
             this.OpenTextDialog.FileName = "openFileDialog1";
             // 
-            // pictureBox1
+            // ROMType_Lb
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(72, 14);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(273, 235);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.ROMType_Lb.AutoSize = true;
+            this.ROMType_Lb.Location = new System.Drawing.Point(348, 249);
+            this.ROMType_Lb.Name = "ROMType_Lb";
+            this.ROMType_Lb.Size = new System.Drawing.Size(109, 13);
+            this.ROMType_Lb.TabIndex = 7;
+            this.ROMType_Lb.Text = "RomTypePlaceholder";
+            this.ROMType_Lb.Click += new System.EventHandler(this.ROMType_Lb_Click);
+            // 
+            // gameName_Lb
+            // 
+            this.gameName_Lb.AutoSize = true;
+            this.gameName_Lb.Location = new System.Drawing.Point(348, 184);
+            this.gameName_Lb.Name = "gameName_Lb";
+            this.gameName_Lb.Size = new System.Drawing.Size(91, 13);
+            this.gameName_Lb.TabIndex = 8;
+            this.gameName_Lb.Text = "NamePlaceholder";
+            this.gameName_Lb.Click += new System.EventHandler(this.gameName_Lb_Click);
+            // 
+            // romInfo_Lb
+            // 
+            this.romInfo_Lb.AutoSize = true;
+            this.romInfo_Lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.romInfo_Lb.Location = new System.Drawing.Point(347, 149);
+            this.romInfo_Lb.Name = "romInfo_Lb";
+            this.romInfo_Lb.Size = new System.Drawing.Size(165, 20);
+            this.romInfo_Lb.TabIndex = 9;
+            this.romInfo_Lb.Text = "ROM INFORMATION:";
+            this.romInfo_Lb.Click += new System.EventHandler(this.romInfo_Lb_Click);
+            // 
+            // translate_Btn
+            // 
+            this.translate_Btn.Location = new System.Drawing.Point(385, 89);
+            this.translate_Btn.Name = "translate_Btn";
+            this.translate_Btn.Size = new System.Drawing.Size(159, 23);
+            this.translate_Btn.TabIndex = 10;
+            this.translate_Btn.Text = "TRANSLATE";
+            this.translate_Btn.UseVisualStyleBackColor = true;
+            this.translate_Btn.Click += new System.EventHandler(this.translate_Btn_Click);
+            // 
+            // mirroring_Lb
+            // 
+            this.mirroring_Lb.AutoSize = true;
+            this.mirroring_Lb.Location = new System.Drawing.Point(348, 197);
+            this.mirroring_Lb.Name = "mirroring_Lb";
+            this.mirroring_Lb.Size = new System.Drawing.Size(103, 13);
+            this.mirroring_Lb.TabIndex = 11;
+            this.mirroring_Lb.Text = "MirroringPlaceholder";
+            this.mirroring_Lb.Click += new System.EventHandler(this.mirroring_Lb_Click);
+            // 
+            // sram_Lb
+            // 
+            this.sram_Lb.AutoSize = true;
+            this.sram_Lb.Location = new System.Drawing.Point(348, 210);
+            this.sram_Lb.Name = "sram_Lb";
+            this.sram_Lb.Size = new System.Drawing.Size(94, 13);
+            this.sram_Lb.TabIndex = 13;
+            this.sram_Lb.Text = "SRAMPlaceholder";
+            this.sram_Lb.Click += new System.EventHandler(this.sram_Lb_Click);
+            // 
+            // vram_Lb
+            // 
+            this.vram_Lb.AutoSize = true;
+            this.vram_Lb.Location = new System.Drawing.Point(348, 236);
+            this.vram_Lb.Name = "vram_Lb";
+            this.vram_Lb.Size = new System.Drawing.Size(94, 13);
+            this.vram_Lb.TabIndex = 15;
+            this.vram_Lb.Text = "VRAMPlaceholder";
+            this.vram_Lb.Click += new System.EventHandler(this.vram_Lb_Click);
+            // 
+            // trainer_Lb
+            // 
+            this.trainer_Lb.AutoSize = true;
+            this.trainer_Lb.Location = new System.Drawing.Point(348, 223);
+            this.trainer_Lb.Name = "trainer_Lb";
+            this.trainer_Lb.Size = new System.Drawing.Size(96, 13);
+            this.trainer_Lb.TabIndex = 16;
+            this.trainer_Lb.Text = "TrainerPlaceholder";
+            this.trainer_Lb.Click += new System.EventHandler(this.trainer_Lb_Click);
+            // 
+            // testBox
+            // 
+            this.testBox.Location = new System.Drawing.Point(21, 12);
+            this.testBox.Multiline = true;
+            this.testBox.Name = "testBox";
+            this.testBox.ReadOnly = true;
+            this.testBox.Size = new System.Drawing.Size(286, 250);
+            this.testBox.TabIndex = 17;
+            this.testBox.TextChanged += new System.EventHandler(this.testBox_TextChanged_2);
             // 
             // NESForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.testBox);
+            this.Controls.Add(this.trainer_Lb);
+            this.Controls.Add(this.vram_Lb);
+            this.Controls.Add(this.sram_Lb);
+            this.Controls.Add(this.mirroring_Lb);
+            this.Controls.Add(this.translate_Btn);
+            this.Controls.Add(this.romInfo_Lb);
+            this.Controls.Add(this.gameName_Lb);
+            this.Controls.Add(this.ROMType_Lb);
             this.Controls.Add(this.TextDirectory);
             this.Controls.Add(this.ROMDirectory);
             this.Controls.Add(this.TextSel);
@@ -131,9 +228,8 @@ namespace NES_Decom_GUI
             this.Controls.Add(this.TextFile);
             this.Controls.Add(this.label1);
             this.Name = "NESForm";
-            this.Text = "NES Decompiler GUI";
+            this.Text = "NES Translator GUI";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,7 +245,15 @@ namespace NES_Decom_GUI
         private System.Windows.Forms.Label TextDirectory;
         private System.Windows.Forms.OpenFileDialog OpenROMDialog;
         private System.Windows.Forms.OpenFileDialog OpenTextDialog;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label ROMType_Lb;
+        private System.Windows.Forms.Label gameName_Lb;
+        private System.Windows.Forms.Label romInfo_Lb;
+        private System.Windows.Forms.Button translate_Btn;
+        private System.Windows.Forms.Label mirroring_Lb;
+        private System.Windows.Forms.Label sram_Lb;
+        private System.Windows.Forms.Label vram_Lb;
+        private System.Windows.Forms.Label trainer_Lb;
+        public System.Windows.Forms.TextBox testBox;
     }
 }
 
