@@ -45,13 +45,13 @@ namespace NES_Decom_GUI
             this.sram_Lb = new System.Windows.Forms.Label();
             this.vram_Lb = new System.Windows.Forms.Label();
             this.trainer_Lb = new System.Windows.Forms.Label();
-            this.testBox = new System.Windows.Forms.TextBox();
+            this.outputBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(432, 19);
+            this.label1.Location = new System.Drawing.Point(93, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 0;
@@ -61,7 +61,7 @@ namespace NES_Decom_GUI
             // TextFile
             // 
             this.TextFile.AutoSize = true;
-            this.TextFile.Location = new System.Drawing.Point(432, 52);
+            this.TextFile.Location = new System.Drawing.Point(93, 57);
             this.TextFile.Name = "TextFile";
             this.TextFile.Size = new System.Drawing.Size(53, 13);
             this.TextFile.TabIndex = 1;
@@ -70,7 +70,7 @@ namespace NES_Decom_GUI
             // 
             // ROMSel
             // 
-            this.ROMSel.Location = new System.Drawing.Point(351, 14);
+            this.ROMSel.Location = new System.Drawing.Point(12, 9);
             this.ROMSel.Name = "ROMSel";
             this.ROMSel.Size = new System.Drawing.Size(75, 23);
             this.ROMSel.TabIndex = 2;
@@ -80,7 +80,7 @@ namespace NES_Decom_GUI
             // 
             // TextSel
             // 
-            this.TextSel.Location = new System.Drawing.Point(351, 47);
+            this.TextSel.Location = new System.Drawing.Point(12, 52);
             this.TextSel.Name = "TextSel";
             this.TextSel.Size = new System.Drawing.Size(75, 23);
             this.TextSel.TabIndex = 3;
@@ -91,7 +91,7 @@ namespace NES_Decom_GUI
             // ROMDirectory
             // 
             this.ROMDirectory.AutoSize = true;
-            this.ROMDirectory.Location = new System.Drawing.Point(495, 19);
+            this.ROMDirectory.Location = new System.Drawing.Point(152, 14);
             this.ROMDirectory.Name = "ROMDirectory";
             this.ROMDirectory.Size = new System.Drawing.Size(49, 13);
             this.ROMDirectory.TabIndex = 4;
@@ -101,7 +101,7 @@ namespace NES_Decom_GUI
             // TextDirectory
             // 
             this.TextDirectory.AutoSize = true;
-            this.TextDirectory.Location = new System.Drawing.Point(495, 52);
+            this.TextDirectory.Location = new System.Drawing.Point(152, 57);
             this.TextDirectory.Name = "TextDirectory";
             this.TextDirectory.Size = new System.Drawing.Size(49, 13);
             this.TextDirectory.TabIndex = 5;
@@ -119,7 +119,7 @@ namespace NES_Decom_GUI
             // ROMType_Lb
             // 
             this.ROMType_Lb.AutoSize = true;
-            this.ROMType_Lb.Location = new System.Drawing.Point(348, 249);
+            this.ROMType_Lb.Location = new System.Drawing.Point(350, 98);
             this.ROMType_Lb.Name = "ROMType_Lb";
             this.ROMType_Lb.Size = new System.Drawing.Size(109, 13);
             this.ROMType_Lb.TabIndex = 7;
@@ -129,7 +129,7 @@ namespace NES_Decom_GUI
             // gameName_Lb
             // 
             this.gameName_Lb.AutoSize = true;
-            this.gameName_Lb.Location = new System.Drawing.Point(348, 184);
+            this.gameName_Lb.Location = new System.Drawing.Point(350, 34);
             this.gameName_Lb.Name = "gameName_Lb";
             this.gameName_Lb.Size = new System.Drawing.Size(91, 13);
             this.gameName_Lb.TabIndex = 8;
@@ -140,7 +140,7 @@ namespace NES_Decom_GUI
             // 
             this.romInfo_Lb.AutoSize = true;
             this.romInfo_Lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.romInfo_Lb.Location = new System.Drawing.Point(347, 149);
+            this.romInfo_Lb.Location = new System.Drawing.Point(349, 14);
             this.romInfo_Lb.Name = "romInfo_Lb";
             this.romInfo_Lb.Size = new System.Drawing.Size(165, 20);
             this.romInfo_Lb.TabIndex = 9;
@@ -149,9 +149,9 @@ namespace NES_Decom_GUI
             // 
             // translate_Btn
             // 
-            this.translate_Btn.Location = new System.Drawing.Point(385, 89);
+            this.translate_Btn.Location = new System.Drawing.Point(12, 98);
             this.translate_Btn.Name = "translate_Btn";
-            this.translate_Btn.Size = new System.Drawing.Size(159, 23);
+            this.translate_Btn.Size = new System.Drawing.Size(189, 23);
             this.translate_Btn.TabIndex = 10;
             this.translate_Btn.Text = "TRANSLATE";
             this.translate_Btn.UseVisualStyleBackColor = true;
@@ -160,7 +160,7 @@ namespace NES_Decom_GUI
             // mirroring_Lb
             // 
             this.mirroring_Lb.AutoSize = true;
-            this.mirroring_Lb.Location = new System.Drawing.Point(348, 197);
+            this.mirroring_Lb.Location = new System.Drawing.Point(350, 47);
             this.mirroring_Lb.Name = "mirroring_Lb";
             this.mirroring_Lb.Size = new System.Drawing.Size(103, 13);
             this.mirroring_Lb.TabIndex = 11;
@@ -170,7 +170,7 @@ namespace NES_Decom_GUI
             // sram_Lb
             // 
             this.sram_Lb.AutoSize = true;
-            this.sram_Lb.Location = new System.Drawing.Point(348, 210);
+            this.sram_Lb.Location = new System.Drawing.Point(350, 60);
             this.sram_Lb.Name = "sram_Lb";
             this.sram_Lb.Size = new System.Drawing.Size(94, 13);
             this.sram_Lb.TabIndex = 13;
@@ -180,7 +180,7 @@ namespace NES_Decom_GUI
             // vram_Lb
             // 
             this.vram_Lb.AutoSize = true;
-            this.vram_Lb.Location = new System.Drawing.Point(348, 236);
+            this.vram_Lb.Location = new System.Drawing.Point(350, 86);
             this.vram_Lb.Name = "vram_Lb";
             this.vram_Lb.Size = new System.Drawing.Size(94, 13);
             this.vram_Lb.TabIndex = 15;
@@ -190,29 +190,30 @@ namespace NES_Decom_GUI
             // trainer_Lb
             // 
             this.trainer_Lb.AutoSize = true;
-            this.trainer_Lb.Location = new System.Drawing.Point(348, 223);
+            this.trainer_Lb.Location = new System.Drawing.Point(350, 73);
             this.trainer_Lb.Name = "trainer_Lb";
             this.trainer_Lb.Size = new System.Drawing.Size(96, 13);
             this.trainer_Lb.TabIndex = 16;
             this.trainer_Lb.Text = "TrainerPlaceholder";
             this.trainer_Lb.Click += new System.EventHandler(this.trainer_Lb_Click);
             // 
-            // testBox
+            // outputBox
             // 
-            this.testBox.Location = new System.Drawing.Point(21, 12);
-            this.testBox.Multiline = true;
-            this.testBox.Name = "testBox";
-            this.testBox.ReadOnly = true;
-            this.testBox.Size = new System.Drawing.Size(286, 250);
-            this.testBox.TabIndex = 17;
-            this.testBox.TextChanged += new System.EventHandler(this.testBox_TextChanged_2);
+            this.outputBox.Location = new System.Drawing.Point(12, 127);
+            this.outputBox.Multiline = true;
+            this.outputBox.Name = "outputBox";
+            this.outputBox.ReadOnly = true;
+            this.outputBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.outputBox.Size = new System.Drawing.Size(248, 210);
+            this.outputBox.TabIndex = 17;
             // 
             // NESForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.testBox);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(613, 349);
+            this.Controls.Add(this.outputBox);
             this.Controls.Add(this.trainer_Lb);
             this.Controls.Add(this.vram_Lb);
             this.Controls.Add(this.sram_Lb);
@@ -241,19 +242,19 @@ namespace NES_Decom_GUI
         private System.Windows.Forms.Label TextFile;
         private System.Windows.Forms.Button ROMSel;
         private System.Windows.Forms.Button TextSel;
-        private System.Windows.Forms.Label ROMDirectory;
-        private System.Windows.Forms.Label TextDirectory;
         private System.Windows.Forms.OpenFileDialog OpenROMDialog;
         private System.Windows.Forms.OpenFileDialog OpenTextDialog;
-        private System.Windows.Forms.Label ROMType_Lb;
-        private System.Windows.Forms.Label gameName_Lb;
         private System.Windows.Forms.Label romInfo_Lb;
         private System.Windows.Forms.Button translate_Btn;
-        private System.Windows.Forms.Label mirroring_Lb;
-        private System.Windows.Forms.Label sram_Lb;
-        private System.Windows.Forms.Label vram_Lb;
-        private System.Windows.Forms.Label trainer_Lb;
-        public System.Windows.Forms.TextBox testBox;
+        public System.Windows.Forms.Label gameName_Lb;
+        public System.Windows.Forms.Label ROMDirectory;
+        public System.Windows.Forms.Label TextDirectory;
+        public System.Windows.Forms.Label ROMType_Lb;
+        public System.Windows.Forms.Label mirroring_Lb;
+        public System.Windows.Forms.Label sram_Lb;
+        public System.Windows.Forms.Label vram_Lb;
+        public System.Windows.Forms.Label trainer_Lb;
+        private System.Windows.Forms.TextBox outputBox;
     }
 }
 

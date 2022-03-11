@@ -1,17 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using NES_Decom;
 
-// TODO: Create labels for header type (iNES 1.0 or 2.0)
-// TODO: Create labels for the rest of the header stuff (SRAM, etc)
 
 namespace NES_Decom_GUI
 {
@@ -24,7 +18,6 @@ namespace NES_Decom_GUI
 
         public void Form1_Load(object sender, EventArgs e)
         {
-            NESDisassemble Test = new NESDisassemble();
 
             TextDirectory.Text = ""; //Text File Directory?
             ROMDirectory.Text = ""; //ROM Directory?
@@ -34,26 +27,25 @@ namespace NES_Decom_GUI
             sram_Lb.Text = ""; //SRAM?
             trainer_Lb.Text = ""; //Trainer?
             vram_Lb.Text = ""; //VRAM type?
-            testBox.Text = "";
 
         }
 
-        private void TextFile_Click(object sender, EventArgs e)
+        public void TextFile_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        public void label1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        public void label2_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void ROMSel_Click(object sender, EventArgs e)
+        public void ROMSel_Click(object sender, EventArgs e)
         {
             OpenFileDialog ROMSel = new OpenFileDialog();
             ROMSel.Filter = "NES ROM Files (*.nes)|*.nes|All Files (*.*|*.*";
@@ -70,7 +62,7 @@ namespace NES_Decom_GUI
 
         }
 
-        private void TextSel_Click(object sender, EventArgs e)
+        public void TextSel_Click(object sender, EventArgs e)
         {
             OpenFileDialog TextSel = new OpenFileDialog();
             TextSel.Filter = "Text Files (*.txt)|*.txt|All Files (*.*|*.*";
@@ -82,52 +74,46 @@ namespace NES_Decom_GUI
             }
         }
 
-        private void sram_Lb_Click(object sender, EventArgs e)
+        public void sram_Lb_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void TextLabel_Click(object sender, EventArgs e)
+        public void TextLabel_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void mirroring_Lb_Click(object sender, EventArgs e)
+        public void mirroring_Lb_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void gameName_Lb_Click(object sender, EventArgs e)
+        public void gameName_Lb_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void ROMType_Lb_Click(object sender, EventArgs e)
+        public void ROMType_Lb_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void romInfo_Lb_Click(object sender, EventArgs e)
+        public void romInfo_Lb_Click(object sender, EventArgs e)
         {
 
         }
-        private void trainer_Lb_Click(object sender, EventArgs e)
+        public void trainer_Lb_Click(object sender, EventArgs e)
         {
 
         }
-        private void vram_Lb_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void pictureBox1_Click(object sender, EventArgs e)
+        public void vram_Lb_Click(object sender, EventArgs e)
         {
 
         }
 
         unsafe private void translate_Btn_Click(object sender, EventArgs e)
         {
-
-
             using (FileStream fs = new FileStream(ROMDirectory.Text, FileMode.Open))
             {
 
@@ -246,10 +232,10 @@ namespace NES_Decom_GUI
                         pc += nes.Disassembler(ToArrayBytes, pc, TextDirectory.Text);
                     }
                 }
+
+                outputBox.Text = File.ReadAllText(TextDirectory.Text);
+
             }
-        }
-        public void testBox_TextChanged_2(object sender, EventArgs e)
-        {
         }
     }
 }
