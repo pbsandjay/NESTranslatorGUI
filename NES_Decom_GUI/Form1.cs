@@ -21,12 +21,7 @@ namespace NES_Decom_GUI
 
             TextDirectory.Text = ""; //Text File Directory?
             ROMDirectory.Text = ""; //ROM Directory?
-            gameName_Lb.Text = ""; //ROM Name?
-            ROMType_Lb.Text = ""; //Type of ROM?
-            mirroring_Lb.Text = ""; //Type of mirroring?         
-            sram_Lb.Text = ""; //SRAM?
-            trainer_Lb.Text = ""; //Trainer?
-            vram_Lb.Text = ""; //VRAM type?
+
 
         }
 
@@ -58,7 +53,7 @@ namespace NES_Decom_GUI
 
             string filename = Path.GetFileNameWithoutExtension(ROMSel.FileName);
             string upper = filename.ToUpper();
-            gameName_Lb.Text = upper;
+            gameTxt.Text = upper;
 
         }
 
@@ -142,76 +137,107 @@ namespace NES_Decom_GUI
                 int PRGSize = defaultPRG * PRGLoc; //get the size in bytes of the PRG 
                 int CHRSize = defaultCHR * CHRLoc; //get the size in bytes of the CHR
 
-                int flag6 = byteArray[6];
-                string flag6Convert = Convert.ToString(flag6, 2);
+                PRGtxt.Text = Convert.ToString(PRGSize) + " bytes";
+                CHRtxt.Text = Convert.ToString(CHRSize) + " bytes";
+
+
+                //Fix everything from here....
+                uint flag6 = byteArray[6];
+                uint flag7 = byteArray[7];
+                string flag6Convert = Convert.ToString(flag6, 2).PadLeft(8, '0');
+                string flag7Convert = Convert.ToString(flag7, 2).PadLeft(8, '0');
+
+                uint lowerNybble = flag6 >> 4;
+                string flag6Binary = Convert.ToString(lowerNybble, 2).PadLeft(4, '0');
+                uint upperNybble = flag7 >> 4;
+                string flag7Binary = Convert.ToString(upperNybble, 2).PadLeft(4, '0');
+
+                string binaryAppend = flag7Binary + flag6Binary;
+                int mapperNumber = Convert.ToInt32(binaryAppend, 2);
+                Mappertxt.Text = Convert.ToString(mapperNumber);
+
+                MapperList MapList = new MapperList();
+                string Mapper = "";
+                string MapperComp = MapList.Mappers(mapperNumber, Mapper);
+                Mappertxt.Text = Convert.ToString(mapperNumber) + "/" + MapperComp;
+                //To here. This is way too damn messy and hacky. 
+
 
                 char[] flag6Char = flag6Convert.ToCharArray();
+
+                char[] flag7Char = flag7Convert.ToCharArray();
+
+
+                
+
+
+                
 
 
                 using (StreamWriter sr = new StreamWriter(TextDirectory.Text, false, Encoding.ASCII))
                 {
 
 
+                    if (flag6Char[7] == '0')
+                    {
+                        sr.WriteLine(gameTxt.Text + " uses Horizontal Mirroring");
+                        mirrorTxt.Text = "Horizontal";
+
+                    }
+                    else
+                    {
+                        sr.WriteLine(gameTxt.Text + " uses Vertical Mirroring");
+                        mirrorTxt.Text = "Vertical";
+
+
+                    }
+
+                    if (flag6Char[6] == '0')
+                    {
+                        sr.WriteLine(gameTxt.Text + " does not use SRAM");
+                        SRAMtxt.Text = "No";
+                    }
+                    else
+                    {
+                        sr.WriteLine(sram_Lb.Text = gameTxt.Text + " uses SRAM");
+                        SRAMtxt.Text = "Yes";
+                    }
+
+                    if (flag6Char[5] == '0')
+                    {
+                        sr.WriteLine(gameTxt.Text + " does not use a Trainer");
+                        Trainertxt.Text = "No";
+                    }
+                    else
+                    {
+                        sr.WriteLine(gameTxt.Text + " uses a Trainer");
+                        Trainertxt.Text = "Yes";
+                    }
+
                     if (flag6Char[4] == '0')
                     {
-                        sr.WriteLine(mirroring_Lb.Text = gameName_Lb.Text + " uses Horizontal Mirroring");
-                        mirroring_Lb.Text = gameName_Lb.Text + " uses Horizontal Mirroring";
-
+                        sr.WriteLine(gameTxt.Text + " does not use four-screen VRAM");
+                        VRAMtxt.Text = "No";
                     }
                     else
                     {
-                        sr.WriteLine(mirroring_Lb.Text = gameName_Lb.Text + " uses Vertical Mirroring");
-                        mirroring_Lb.Text = gameName_Lb.Text + " uses Vertical Mirroring";
-
-
-                    }
-
-                    if (flag6Char[3] == '0')
-                    {
-                        sr.WriteLine(sram_Lb.Text = gameName_Lb.Text + " does not use SRAM");
-                        sram_Lb.Text = gameName_Lb.Text + " does not use SRAM";
-                    }
-                    else
-                    {
-                        sr.WriteLine(sram_Lb.Text = gameName_Lb.Text + " uses SRAM");
-                        sram_Lb.Text = gameName_Lb.Text + " uses SRAM";
-                    }
-
-                    if (flag6Char[2] == '0')
-                    {
-                        sr.WriteLine(trainer_Lb.Text = gameName_Lb.Text + " does not use a Trainer");
-                        trainer_Lb.Text = gameName_Lb.Text + " does not use a Trainer";
-                    }
-                    else
-                    {
-                        sr.WriteLine(trainer_Lb.Text = gameName_Lb.Text + " uses a Trainer");
-                        trainer_Lb.Text = gameName_Lb.Text + " uses a Trainer";
-                    }
-
-                    if (flag6Char[1] == '0')
-                    {
-                        sr.WriteLine(vram_Lb.Text = gameName_Lb.Text + " does not use four-screen VRAM");
-                        vram_Lb.Text = gameName_Lb.Text + " does not use four-screen VRAM";
-                    }
-                    else
-                    {
-                        sr.WriteLine(vram_Lb.Text = gameName_Lb.Text + " uses four-screen VRAM");
-                        vram_Lb.Text = gameName_Lb.Text + " uses four-screen VRAM";
+                        sr.WriteLine(gameTxt.Text + " uses four-screen VRAM");
+                        VRAMtxt.Text = "Yes";
 
                     }
 
                     bool iNESFormat = false;
                     if (Convert.ToChar(byteArray[0]) == 'N' && Convert.ToChar(byteArray[1]) == 'E' && Convert.ToChar(byteArray[2]) == 'S' && byteArray[3] == 0x1A)
                     {
-                        sr.WriteLine(ROMType_Lb.Text = gameName_Lb.Text + " uses the iNES 1.0 ROM header");
-                        ROMType_Lb.Text = gameName_Lb.Text + " uses the iNES 1.0 ROM header";
+                        sr.WriteLine(gameTxt.Text + " uses the iNES 1.0 ROM header");
+                        ROMHeadertxt.Text = "iNES 1.0";
                         sr.WriteLine("--------------------START OF CODE----------------");
                         iNESFormat = true;
                     }
                     if (iNESFormat == true && (byteArray[7] & 0x0c) == 0x08)
                     {
-                        sr.WriteLine(ROMType_Lb.Text = gameName_Lb.Text + " uses the iNES 2.0 ROM header");
-                        ROMType_Lb.Text = gameName_Lb.Text + " uses the iNES 2.0 ROM header";
+                        sr.WriteLine(gameTxt.Text + " uses the iNES 2.0 ROM header");
+                        ROMHeadertxt.Text = "iNES 2.0";
                         sr.WriteLine("--------------------START OF CODE----------------");
                     }
 
