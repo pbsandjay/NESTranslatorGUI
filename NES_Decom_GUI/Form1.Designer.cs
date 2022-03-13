@@ -133,7 +133,7 @@ namespace NES_Decom_GUI
             // ROMHeader_lb
             // 
             this.ROMHeader_lb.AutoSize = true;
-            this.ROMHeader_lb.Location = new System.Drawing.Point(392, 240);
+            this.ROMHeader_lb.Location = new System.Drawing.Point(399, 171);
             this.ROMHeader_lb.Name = "ROMHeader_lb";
             this.ROMHeader_lb.Size = new System.Drawing.Size(45, 13);
             this.ROMHeader_lb.TabIndex = 7;
@@ -143,7 +143,7 @@ namespace NES_Decom_GUI
             // gameName_Lb
             // 
             this.gameName_Lb.AutoSize = true;
-            this.gameName_Lb.Location = new System.Drawing.Point(399, 110);
+            this.gameName_Lb.Location = new System.Drawing.Point(406, 41);
             this.gameName_Lb.Name = "gameName_Lb";
             this.gameName_Lb.Size = new System.Drawing.Size(38, 13);
             this.gameName_Lb.TabIndex = 8;
@@ -154,7 +154,7 @@ namespace NES_Decom_GUI
             // 
             this.romInfo_Lb.AutoSize = true;
             this.romInfo_Lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.romInfo_Lb.Location = new System.Drawing.Point(451, 83);
+            this.romInfo_Lb.Location = new System.Drawing.Point(458, 14);
             this.romInfo_Lb.Name = "romInfo_Lb";
             this.romInfo_Lb.Size = new System.Drawing.Size(165, 20);
             this.romInfo_Lb.TabIndex = 9;
@@ -174,7 +174,7 @@ namespace NES_Decom_GUI
             // mirroring_Lb
             // 
             this.mirroring_Lb.AutoSize = true;
-            this.mirroring_Lb.Location = new System.Drawing.Point(387, 136);
+            this.mirroring_Lb.Location = new System.Drawing.Point(394, 67);
             this.mirroring_Lb.Name = "mirroring_Lb";
             this.mirroring_Lb.Size = new System.Drawing.Size(50, 13);
             this.mirroring_Lb.TabIndex = 11;
@@ -184,7 +184,7 @@ namespace NES_Decom_GUI
             // sram_Lb
             // 
             this.sram_Lb.AutoSize = true;
-            this.sram_Lb.Location = new System.Drawing.Point(396, 162);
+            this.sram_Lb.Location = new System.Drawing.Point(403, 93);
             this.sram_Lb.Name = "sram_Lb";
             this.sram_Lb.Size = new System.Drawing.Size(41, 13);
             this.sram_Lb.TabIndex = 13;
@@ -194,7 +194,7 @@ namespace NES_Decom_GUI
             // vram_Lb
             // 
             this.vram_Lb.AutoSize = true;
-            this.vram_Lb.Location = new System.Drawing.Point(335, 214);
+            this.vram_Lb.Location = new System.Drawing.Point(342, 145);
             this.vram_Lb.Name = "vram_Lb";
             this.vram_Lb.Size = new System.Drawing.Size(102, 13);
             this.vram_Lb.TabIndex = 15;
@@ -204,7 +204,7 @@ namespace NES_Decom_GUI
             // trainer_Lb
             // 
             this.trainer_Lb.AutoSize = true;
-            this.trainer_Lb.Location = new System.Drawing.Point(394, 188);
+            this.trainer_Lb.Location = new System.Drawing.Point(401, 119);
             this.trainer_Lb.Name = "trainer_Lb";
             this.trainer_Lb.Size = new System.Drawing.Size(43, 13);
             this.trainer_Lb.TabIndex = 16;
@@ -224,7 +224,7 @@ namespace NES_Decom_GUI
             // CHR_Lb
             // 
             this.CHR_Lb.AutoSize = true;
-            this.CHR_Lb.Location = new System.Drawing.Point(381, 288);
+            this.CHR_Lb.Location = new System.Drawing.Point(388, 219);
             this.CHR_Lb.Name = "CHR_Lb";
             this.CHR_Lb.Size = new System.Drawing.Size(56, 13);
             this.CHR_Lb.TabIndex = 18;
@@ -233,7 +233,7 @@ namespace NES_Decom_GUI
             // Prg_Lb
             // 
             this.Prg_Lb.AutoSize = true;
-            this.Prg_Lb.Location = new System.Drawing.Point(381, 265);
+            this.Prg_Lb.Location = new System.Drawing.Point(388, 196);
             this.Prg_Lb.Name = "Prg_Lb";
             this.Prg_Lb.Size = new System.Drawing.Size(56, 13);
             this.Prg_Lb.TabIndex = 19;
@@ -242,7 +242,7 @@ namespace NES_Decom_GUI
             // mapperLb
             // 
             this.mapperLb.AutoSize = true;
-            this.mapperLb.Location = new System.Drawing.Point(391, 314);
+            this.mapperLb.Location = new System.Drawing.Point(398, 245);
             this.mapperLb.Name = "mapperLb";
             this.mapperLb.Size = new System.Drawing.Size(46, 13);
             this.mapperLb.TabIndex = 20;
@@ -250,7 +250,7 @@ namespace NES_Decom_GUI
             // 
             // gameTxt
             // 
-            this.gameTxt.Location = new System.Drawing.Point(443, 107);
+            this.gameTxt.Location = new System.Drawing.Point(450, 38);
             this.gameTxt.Name = "gameTxt";
             this.gameTxt.ReadOnly = true;
             this.gameTxt.Size = new System.Drawing.Size(173, 20);
@@ -258,7 +258,7 @@ namespace NES_Decom_GUI
             // 
             // mirrorTxt
             // 
-            this.mirrorTxt.Location = new System.Drawing.Point(443, 133);
+            this.mirrorTxt.Location = new System.Drawing.Point(450, 64);
             this.mirrorTxt.Name = "mirrorTxt";
             this.mirrorTxt.ReadOnly = true;
             this.mirrorTxt.Size = new System.Drawing.Size(173, 20);
@@ -266,7 +266,7 @@ namespace NES_Decom_GUI
             // 
             // SRAMtxt
             // 
-            this.SRAMtxt.Location = new System.Drawing.Point(443, 159);
+            this.SRAMtxt.Location = new System.Drawing.Point(450, 90);
             this.SRAMtxt.Name = "SRAMtxt";
             this.SRAMtxt.ReadOnly = true;
             this.SRAMtxt.Size = new System.Drawing.Size(173, 20);
@@ -274,7 +274,7 @@ namespace NES_Decom_GUI
             // 
             // Trainertxt
             // 
-            this.Trainertxt.Location = new System.Drawing.Point(443, 185);
+            this.Trainertxt.Location = new System.Drawing.Point(450, 116);
             this.Trainertxt.Name = "Trainertxt";
             this.Trainertxt.ReadOnly = true;
             this.Trainertxt.Size = new System.Drawing.Size(173, 20);
@@ -282,7 +282,7 @@ namespace NES_Decom_GUI
             // 
             // VRAMtxt
             // 
-            this.VRAMtxt.Location = new System.Drawing.Point(443, 211);
+            this.VRAMtxt.Location = new System.Drawing.Point(450, 142);
             this.VRAMtxt.Name = "VRAMtxt";
             this.VRAMtxt.ReadOnly = true;
             this.VRAMtxt.Size = new System.Drawing.Size(173, 20);
@@ -290,7 +290,7 @@ namespace NES_Decom_GUI
             // 
             // ROMHeadertxt
             // 
-            this.ROMHeadertxt.Location = new System.Drawing.Point(443, 237);
+            this.ROMHeadertxt.Location = new System.Drawing.Point(450, 168);
             this.ROMHeadertxt.Name = "ROMHeadertxt";
             this.ROMHeadertxt.ReadOnly = true;
             this.ROMHeadertxt.Size = new System.Drawing.Size(173, 20);
@@ -298,7 +298,7 @@ namespace NES_Decom_GUI
             // 
             // PRGtxt
             // 
-            this.PRGtxt.Location = new System.Drawing.Point(443, 262);
+            this.PRGtxt.Location = new System.Drawing.Point(450, 193);
             this.PRGtxt.Name = "PRGtxt";
             this.PRGtxt.ReadOnly = true;
             this.PRGtxt.Size = new System.Drawing.Size(173, 20);
@@ -306,7 +306,7 @@ namespace NES_Decom_GUI
             // 
             // CHRtxt
             // 
-            this.CHRtxt.Location = new System.Drawing.Point(443, 285);
+            this.CHRtxt.Location = new System.Drawing.Point(450, 216);
             this.CHRtxt.Name = "CHRtxt";
             this.CHRtxt.ReadOnly = true;
             this.CHRtxt.Size = new System.Drawing.Size(173, 20);
@@ -314,7 +314,7 @@ namespace NES_Decom_GUI
             // 
             // Mappertxt
             // 
-            this.Mappertxt.Location = new System.Drawing.Point(443, 311);
+            this.Mappertxt.Location = new System.Drawing.Point(450, 242);
             this.Mappertxt.Name = "Mappertxt";
             this.Mappertxt.ReadOnly = true;
             this.Mappertxt.Size = new System.Drawing.Size(173, 20);
@@ -329,7 +329,7 @@ namespace NES_Decom_GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(656, 353);
+            this.ClientSize = new System.Drawing.Size(628, 326);
             this.Controls.Add(this.Mappertxt);
             this.Controls.Add(this.CHRtxt);
             this.Controls.Add(this.PRGtxt);

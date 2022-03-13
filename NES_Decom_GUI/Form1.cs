@@ -290,14 +290,14 @@ namespace NES_Decom_GUI
                     {
                         sr.WriteLine(gameTxt.Text + " uses the iNES 1.0 ROM header");
                         ROMHeadertxt.Text = "iNES 1.0";
-                        sr.WriteLine("--------------------START OF CODE----------------");
+                        sr.WriteLine("------------------------------START OF CODE--------------------------");
                         iNESFormat = true;
                     }
                     if (iNESFormat == true && (byteArray[7] & 0x0c) == 0x08)
                     {
                         sr.WriteLine(gameTxt.Text + " uses the iNES 2.0 ROM header");
                         ROMHeadertxt.Text = "iNES 2.0";
-                        sr.WriteLine("--------------------START OF CODE----------------");
+                        sr.WriteLine("------------------------------START OF CODE--------------------------");
                     }
 
 
