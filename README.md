@@ -50,3 +50,6 @@ A: No. One ROM file to one text file. This is to keep the text file clean. I sug
 
 Q: Does this utilize undocumented 6502 opcodes?  
 A: At the moment, no. I might add it later, but there's not too many licensed games that utilize them. 
+
+Q: What is the numbers and letters before the opcodes?  
+A: Those are the location in ROM that those are scraped from. 
