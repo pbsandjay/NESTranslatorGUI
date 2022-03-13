@@ -1,0 +1,11 @@
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\bin\Release\NES_Decom_GUI.exe.config
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\bin\Release\NES_Decom_GUI.exe
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\bin\Release\NES_Decom_GUI.pdb
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Release\NES Translator GUI.csproj.AssemblyReference.cache
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Release\NES_Decom_GUI.NESForm.resources
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Release\NES_Decom.NESDisassemble.resources
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Release\NES_Decom_GUI.Properties.Resources.resources
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Release\NES Translator GUI.csproj.GenerateResource.cache
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Release\NES Translator GUI.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Release\NES_Decom_GUI.exe
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Release\NES_Decom_GUI.pdb

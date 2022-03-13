@@ -29,6 +29,7 @@ namespace NES_Decom_GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NESForm));
             this.label1 = new System.Windows.Forms.Label();
             this.TextFile = new System.Windows.Forms.Label();
             this.ROMSel = new System.Windows.Forms.Button();
@@ -58,6 +59,7 @@ namespace NES_Decom_GUI
             this.PRGtxt = new System.Windows.Forms.TextBox();
             this.CHRtxt = new System.Windows.Forms.TextBox();
             this.Mappertxt = new System.Windows.Forms.TextBox();
+            this.CreateFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // label1
@@ -318,6 +320,10 @@ namespace NES_Decom_GUI
             this.Mappertxt.Size = new System.Drawing.Size(173, 20);
             this.Mappertxt.TabIndex = 29;
             // 
+            // CreateFileDialog
+            // 
+            this.CreateFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.CreateFileDialog_FileOk);
+            // 
             // NESForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -351,8 +357,9 @@ namespace NES_Decom_GUI
             this.Controls.Add(this.ROMSel);
             this.Controls.Add(this.TextFile);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NESForm";
-            this.Text = "NES Translator GUI";
+            this.Text = "NES Translator ";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -390,6 +397,7 @@ namespace NES_Decom_GUI
         private System.Windows.Forms.TextBox PRGtxt;
         private System.Windows.Forms.TextBox CHRtxt;
         private System.Windows.Forms.TextBox Mappertxt;
+        private System.Windows.Forms.SaveFileDialog CreateFileDialog;
     }
 }
 

@@ -21,6 +21,7 @@ namespace NES_Decom_GUI
 
             TextDirectory.Text = ""; //Text File Directory?
             ROMDirectory.Text = ""; //ROM Directory?
+            translate_Btn.Enabled = false;
 
 
         }
@@ -42,30 +43,86 @@ namespace NES_Decom_GUI
 
         public void ROMSel_Click(object sender, EventArgs e)
         {
+
             OpenFileDialog ROMSel = new OpenFileDialog();
             ROMSel.Filter = "NES ROM Files (*.nes)|*.nes|All Files (*.*|*.*";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            string RomNotSelected = "ROM file not selected, try again?";
+            string RomError = "ERROR";
 
-            if (ROMSel.ShowDialog() == DialogResult.OK)
+            bool RomSelector = true;
+            while (RomSelector == true)
             {
-                ROMDirectory.Text = ROMSel.FileName;
+                if (ROMSel.ShowDialog() == DialogResult.OK)
+                {
+                    ROMDirectory.Text = ROMSel.FileName;
+                    RomSelector = false;
+                }
+                else
+                {
+                    DialogResult result = MessageBox.Show(RomNotSelected, RomError, buttons);
+                    if (result == DialogResult.Yes)
+                    {
+                        RomSelector = true;
+                    }
 
+                    else
+                    {
+                        RomSelector = false;
+                    }
+                }
             }
-
             string filename = Path.GetFileNameWithoutExtension(ROMSel.FileName);
             string upper = filename.ToUpper();
             gameTxt.Text = upper;
-
         }
+
 
         public void TextSel_Click(object sender, EventArgs e)
         {
             OpenFileDialog TextSel = new OpenFileDialog();
+            SaveFileDialog TextSave = new SaveFileDialog();
             TextSel.Filter = "Text Files (*.txt)|*.txt|All Files (*.*|*.*";
 
-            if (TextSel.ShowDialog() == DialogResult.OK)
-            {
-                TextDirectory.Text = TextSel.FileName;
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            string TxtNotSelected = "Text file not selected! Would you like to create one?";
+            string TxtError = "ERROR";
 
+            bool TxtSelector = true;
+
+            while (TxtSelector == true)
+            {
+
+                if (TextSel.ShowDialog() == DialogResult.OK)
+                {
+                    TextDirectory.Text = TextSel.FileName;
+                    TxtSelector = false;
+                    translate_Btn.Enabled = true;
+                }
+
+
+                else
+                {
+                    DialogResult result = MessageBox.Show(TxtNotSelected, TxtError, buttons);
+                    if (result == DialogResult.Yes)
+                    {
+                        TextSave.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                        TextSave.Filter = "Text Files (*.txt)|*.txt|All Files (*.*|*.*";
+                        TextSave.ShowDialog();
+                        TextSel.FileName = TextSave.FileName;
+
+                        FileStream fs = new FileStream(TextSave.FileName, FileMode.Create);
+                        fs.Close();
+
+                        //Console.WriteLine(TextDirectory.Text);
+
+                    }
+                    if (result == DialogResult.No)
+                    {
+                        TxtSelector = false;
+                    }
+                    translate_Btn.Enabled = false;
+                }
             }
         }
 
@@ -109,6 +166,7 @@ namespace NES_Decom_GUI
 
         unsafe private void translate_Btn_Click(object sender, EventArgs e)
         {
+
             using (FileStream fs = new FileStream(ROMDirectory.Text, FileMode.Open))
             {
 
@@ -164,8 +222,6 @@ namespace NES_Decom_GUI
 
 
                 char[] flag6Char = flag6Convert.ToCharArray();
-
-                char[] flag7Char = flag7Convert.ToCharArray();
 
 
                 
@@ -262,6 +318,11 @@ namespace NES_Decom_GUI
                 outputBox.Text = File.ReadAllText(TextDirectory.Text);
 
             }
+        }
+
+        private void CreateFileDialog_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
         }
     }
 }
