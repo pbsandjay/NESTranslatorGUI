@@ -45,7 +45,7 @@ namespace NES_Decom_GUI
         {
 
             OpenFileDialog ROMSel = new OpenFileDialog();
-            ROMSel.Filter = "NES ROM Files (*.nes)|*.nes|All Files (*.*|*.*";
+            ROMSel.Filter = "NES ROM Files (*.nes)|*.nes";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             string RomNotSelected = "ROM file not selected, try again?";
             string RomError = "ERROR";
@@ -82,7 +82,7 @@ namespace NES_Decom_GUI
         {
             OpenFileDialog TextSel = new OpenFileDialog();
             SaveFileDialog TextSave = new SaveFileDialog();
-            TextSel.Filter = "Text Files (*.txt)|*.txt|All Files (*.*|*.*";
+            TextSel.Filter = "Text Files (*.txt)|*.txt";
 
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             string TxtNotSelected = "Text file not selected! Would you like to create one?";
@@ -107,7 +107,7 @@ namespace NES_Decom_GUI
                     if (result == DialogResult.Yes)
                     {
                         TextSave.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                        TextSave.Filter = "Text Files (*.txt)|*.txt|All Files (*.*|*.*";
+                        TextSave.Filter = "Text Files (*.txt)|*.txt";
                         TextSave.ShowDialog();
                         TextSel.FileName = TextSave.FileName;
 
@@ -281,6 +281,9 @@ namespace NES_Decom_GUI
                         VRAMtxt.Text = "Yes";
 
                     }
+
+                    sr.WriteLine(gameTxt.Text + " PRG size is " + PRGSize + " bytes");
+                    sr.WriteLine(gameTxt.Text + " CHR size is " + CHRSize + " bytes");
 
                     bool iNESFormat = false;
                     if (Convert.ToChar(byteArray[0]) == 'N' && Convert.ToChar(byteArray[1]) == 'E' && Convert.ToChar(byteArray[2]) == 'S' && byteArray[3] == 0x1A)

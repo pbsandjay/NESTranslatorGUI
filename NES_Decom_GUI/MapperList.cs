@@ -16,6 +16,7 @@
                 case 3: MapperName = "Nintendo"; break;
                 case 4: MapperName = "Nintendo"; break;
                 case 5: MapperName = "Nintendo"; break;
+                case 6: MapperName = "???"; break;
 
             }
 
