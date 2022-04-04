@@ -312,7 +312,7 @@ namespace NES_Decom_GUI
 
                     int pc = NESheader; //we want to start the PC at where the the header ends. 
 
-                    while (pc < byteArray.Length - (CHRSize + pc))  //16 -> end of PRG ROM
+                    while (pc < PRGSize - pc)  //16 -> end of PRG ROM (Could go back to "byteArray.Length - (CHRSize + pc)" later...) 
                     {
                         pc += nes.Disassembler(ToArrayBytes, pc, TextDirectory.Text);
                     }
@@ -324,6 +324,16 @@ namespace NES_Decom_GUI
         }
 
         private void CreateFileDialog_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+
+        private void gameTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void outputBox_TextChanged(object sender, EventArgs e)
         {
 
         }

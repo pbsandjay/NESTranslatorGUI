@@ -8,7 +8,7 @@
         {
             string MapperName = MapperComp;
 
-            switch(MapperNumbers)
+            switch (MapperNumbers)
             {
                 case 0: MapperName = "Nintendo"; break;
                 case 1: MapperName = "Nintendo"; break;
@@ -18,7 +18,7 @@
                 case 5: MapperName = "Nintendo"; break;
                 case 6: MapperName = "???"; break;
                 case 7: MapperName = "Nintendo/Rare"; break;
-                case 8: MapperName = "???";break;
+                case 8: MapperName = "???"; break;
                 case 9: MapperName = "Nintendo"; break;
                 case 10: MapperName = "Nintendo"; break;
                 case 11: MapperName = "Color Dreams/Wisdom Tree"; break;

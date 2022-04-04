@@ -24,11 +24,11 @@ $3C7 to $3CE in Tetris opened in a hex editor will yield
 
 After translation you'll get the output like so...
 
-3C7: CLC   
-3C8: ADC    #$8F  
-3CA: STA    $A1  
-3CC: LDA    #$53  
-3CE: STA    $A2  
+$3C7: CLC   
+$3C8: ADC    #$8F  
+$3CA: STA    $A1  
+$3CC: LDA    #$53  
+$3CE: STA    $A2  
 
 
 FAQ:
