@@ -220,6 +220,7 @@ namespace NES_Decom_GUI
             this.outputBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.outputBox.Size = new System.Drawing.Size(314, 210);
             this.outputBox.TabIndex = 17;
+            this.outputBox.TextChanged += new System.EventHandler(this.outputBox_TextChanged);
             // 
             // CHR_Lb
             // 
@@ -255,6 +256,7 @@ namespace NES_Decom_GUI
             this.gameTxt.ReadOnly = true;
             this.gameTxt.Size = new System.Drawing.Size(173, 20);
             this.gameTxt.TabIndex = 21;
+            this.gameTxt.TextChanged += new System.EventHandler(this.gameTxt_TextChanged);
             // 
             // mirrorTxt
             // 
