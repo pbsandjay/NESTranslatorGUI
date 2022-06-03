@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using NES_Decom;
+using System.Design;
 
 
 namespace NES_Decom_GUI
@@ -14,15 +15,16 @@ namespace NES_Decom_GUI
         public NESForm()
         {
             InitializeComponent();
-        }
 
+
+        }
         public void Form1_Load(object sender, EventArgs e)
         {
 
             TextDirectory.Text = ""; //Text File Directory?
             ROMDirectory.Text = ""; //ROM Directory?
             translate_Btn.Enabled = false;
-
+            //hexBtn.Enabled = false;
 
         }
 
@@ -335,6 +337,21 @@ namespace NES_Decom_GUI
 
         private void outputBox_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void hexBtn_Click(object sender, EventArgs e)
+        {
+            
+            HexViewer Hex = new HexViewer();
+            Hex.Show();
+            System.ComponentModel.Design.ByteViewer bv = new System.ComponentModel.Design.ByteViewer();
+            bv.SetFile(Convert.ToString(ROMDirectory.Text));
+            Hex.Controls.Add(bv);
+            Hex.AutoScroll = true;
+            
+           
+
 
         }
     }

@@ -60,6 +60,7 @@ namespace NES_Decom_GUI
             this.CHRtxt = new System.Windows.Forms.TextBox();
             this.Mappertxt = new System.Windows.Forms.TextBox();
             this.CreateFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.hexBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -326,12 +327,23 @@ namespace NES_Decom_GUI
             // 
             this.CreateFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.CreateFileDialog_FileOk);
             // 
+            // hexBtn
+            // 
+            this.hexBtn.Location = new System.Drawing.Point(450, 268);
+            this.hexBtn.Name = "hexBtn";
+            this.hexBtn.Size = new System.Drawing.Size(173, 59);
+            this.hexBtn.TabIndex = 30;
+            this.hexBtn.Text = "Hex Viewer";
+            this.hexBtn.UseVisualStyleBackColor = true;
+            this.hexBtn.Click += new System.EventHandler(this.hexBtn_Click);
+            // 
             // NESForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(628, 326);
+            this.ClientSize = new System.Drawing.Size(630, 337);
+            this.Controls.Add(this.hexBtn);
             this.Controls.Add(this.Mappertxt);
             this.Controls.Add(this.CHRtxt);
             this.Controls.Add(this.PRGtxt);
@@ -400,6 +412,7 @@ namespace NES_Decom_GUI
         private System.Windows.Forms.TextBox CHRtxt;
         private System.Windows.Forms.TextBox Mappertxt;
         private System.Windows.Forms.SaveFileDialog CreateFileDialog;
+        private System.Windows.Forms.Button hexBtn;
     }
 }
 
