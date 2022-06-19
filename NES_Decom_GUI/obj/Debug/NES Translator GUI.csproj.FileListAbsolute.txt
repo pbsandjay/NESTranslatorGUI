@@ -21,3 +21,6 @@ C:\Users\Jay\source\repos\NESTranslatorGUI\NES_Decom_GUI\obj\Debug\NES Translato
 C:\Users\Jay\source\repos\NESTranslatorGUI\NES_Decom_GUI\obj\Debug\NES_Decom_GUI.exe
 C:\Users\Jay\source\repos\NESTranslatorGUI\NES_Decom_GUI\obj\Debug\NES_Decom_GUI.pdb
 C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Debug\NES_Decom_GUI.HexViewer.resources
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Debug\NES Translator GUI.csproj.SuggestedBindingRedirects.cache
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Debug\NES_Decom_GUI.Documentation.resources
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\bin\Debug\Documentation.html

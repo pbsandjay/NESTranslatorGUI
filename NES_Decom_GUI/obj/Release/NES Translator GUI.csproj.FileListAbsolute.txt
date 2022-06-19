@@ -9,3 +9,7 @@ C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Release\NES Trans
 C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Release\NES Translator GUI.csproj.CoreCompileInputs.cache
 C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Release\NES_Decom_GUI.exe
 C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Release\NES_Decom_GUI.pdb
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Release\NES Translator GUI.csproj.SuggestedBindingRedirects.cache
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Release\NES_Decom_GUI.Documentation.resources
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Release\NES_Decom_GUI.HexViewer.resources
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\bin\Release\Documentation.html

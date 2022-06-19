@@ -29,6 +29,7 @@ namespace NES_Decom_GUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NESForm));
             this.label1 = new System.Windows.Forms.Label();
             this.TextFile = new System.Windows.Forms.Label();
@@ -61,6 +62,9 @@ namespace NES_Decom_GUI
             this.Mappertxt = new System.Windows.Forms.TextBox();
             this.CreateFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.hexBtn = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.docBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -329,20 +333,47 @@ namespace NES_Decom_GUI
             // 
             // hexBtn
             // 
-            this.hexBtn.Location = new System.Drawing.Point(450, 268);
+            this.hexBtn.Location = new System.Drawing.Point(629, 177);
             this.hexBtn.Name = "hexBtn";
             this.hexBtn.Size = new System.Drawing.Size(173, 59);
             this.hexBtn.TabIndex = 30;
             this.hexBtn.Text = "Hex Viewer";
+            this.toolTip1.SetToolTip(this.hexBtn, "Show the hex code of the selected ROM file");
             this.hexBtn.UseVisualStyleBackColor = true;
             this.hexBtn.Click += new System.EventHandler(this.hexBtn_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(27, 7);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(8, 8);
+            this.button2.TabIndex = 32;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
+            // 
+            // docBtn
+            // 
+            this.docBtn.Location = new System.Drawing.Point(634, 41);
+            this.docBtn.Name = "docBtn";
+            this.docBtn.Size = new System.Drawing.Size(173, 59);
+            this.docBtn.TabIndex = 33;
+            this.docBtn.Text = "6502 Documentation";
+            this.toolTip1.SetToolTip(this.docBtn, "View the 6502 opcode table instruction and CPU documentation");
+            this.docBtn.UseVisualStyleBackColor = true;
+            this.docBtn.Click += new System.EventHandler(this.docBtn_Click);
             // 
             // NESForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(630, 337);
+            this.ClientSize = new System.Drawing.Size(819, 330);
+            this.Controls.Add(this.docBtn);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.hexBtn);
             this.Controls.Add(this.Mappertxt);
             this.Controls.Add(this.CHRtxt);
@@ -413,6 +444,9 @@ namespace NES_Decom_GUI
         private System.Windows.Forms.TextBox Mappertxt;
         private System.Windows.Forms.SaveFileDialog CreateFileDialog;
         private System.Windows.Forms.Button hexBtn;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button docBtn;
     }
 }
 

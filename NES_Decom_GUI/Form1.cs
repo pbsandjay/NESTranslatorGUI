@@ -8,6 +8,7 @@ using NES_Decom;
 using System.Design;
 
 
+
 namespace NES_Decom_GUI
 {
     public partial class NESForm : Form
@@ -353,6 +354,25 @@ namespace NES_Decom_GUI
            
 
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            
+
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
+
+        private void docBtn_Click(object sender, EventArgs e)
+        {
+            Documentation doc = new Documentation();
+            doc.Show();
+            toolTip1.Show("View the 6502 opcode instruction and CPU documentation", docBtn);
         }
     }
 }
