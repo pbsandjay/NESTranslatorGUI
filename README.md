@@ -48,7 +48,7 @@ A: I mirrored everything in the text file to the large text box. This is so you 
 Q: Can I use the same text for different ROM files?  
 A: No. One ROM file to one text file. This is to keep the text file clean. I suggest creating text files with the same name as your ROM files. 
 
-Q: Does this utilize undocumented 6502 opcodes?  
+Q: Does this utilize illegal/undocumented 6502 opcodes?  
 A: At the moment, no. I might add it later, but there's not too many licensed games that utilize them. 
 
 Q: What is the numbers and letters before the opcodes?  

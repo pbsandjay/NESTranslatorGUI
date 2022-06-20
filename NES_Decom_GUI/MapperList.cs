@@ -110,6 +110,7 @@
                 case 97: MapperName = "Irem's TAM-S1"; break;
                 case 98: MapperName = "???"; break;
                 case 99: MapperName = "Vs. System"; break;
+                default: MapperName = "Not Implemented Yet"; break;
 
             }
 
