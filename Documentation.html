@@ -27,9 +27,9 @@
 </head>
 <body>
     <h1 id="TOC">TABLE OF CONTENTS</h1>
-    <p>6502 Opcode Table</p>
+    <p><a href="#OP">6502 Opcode Table</a></p>
     <p>Branch Table</p>
-    <p>Processor Flags</p>
+    <p>Processor Status Flags</p>
     <p>CPU Registers</p>
     <p>CPU Memory Map</p>
     <p>&nbsp;</p>
@@ -52,68 +52,71 @@
                 <td><a href="#BRK">BRK</a></td>
                 <td><a href="#BVC">BVC</a></td>
                 <td><a href="#BVS">BVS</a></td>
-                <td><a href="#BVS">BVS</a></td>
+                <td><a href="#CLC">CLC</a></td>
             </tr>
             <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td><a href="#CLD">CLD</a></td>
+                <td><a href="#CLI">CLI</a></td>
+                <td><a href="#CLV">CLV</a></td>
+                <td><a href="#CMP">CMP</a></td>
+                <td><a href="#CPX">CPX</a></td>
+                <td><a href="#CPY">CPY</a></td>
+                <td><a href="#DEC">DEC</a></td>
+                <td><a href="#DEX">DEX</a></td>
+                <td><a href="#DEY">DEY</a></td>
+                <td><a href="#EOR">EOR</a></td>
+                <td><a href="#INC">INC</a></td>
+                <td><a href="#INX">INX</a></td>
+                <td><a href="#INY">INY</a></td>
+                <td><a href="#JMP">JMP</a></td>
             </tr>
             <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td><a href="#JSR">JSR</a></td>
+                <td><a href="#LDA">LDA</a></td>
+                <td><a href="#LDX">LDX</a></td>
+                <td><a href="#LDY">LDY</a></td>
+                <td><a href="#LSR">LSR</a></td>
+                <td><a href="#NOP">NOP</a></td>
+                <td><a href="#ORA">ORA</a></td>
+                <td><a href="#PHA">PHA</a></td>
+                <td><a href="#PHP">PHP</a></td>
+                <td><a href="#PLA">PLA</a></td>
+                <td><a href="#PLP">PLP</a></td>
+                <td><a href="#ROL">ROL</a></td>
+                <td><a href="#ROR">ROR</a></td>
+                <td><a href="#RTI">RTI</a></td>
             </tr>
             <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td><a href="#RTS">RTS</a></td>
+                <td><a href="#SBC">SBC</a></td>
+                <td><a href="#SEC">SEC</a></td>
+                <td><a href="#SED">SED</a></td>
+                <td><a href="#SEI">SEI</a></td>
+                <td><a href="#STA">STA</a></td>
+                <td><a href="#STX">STX</a></td>
+                <td><a href="#STY">STY</a></td>
+                <td><a href="#TAX">TAX</a></td>
+                <td><a href="#TAY">TAY</a></td>
+                <td><a href="#TSX">TSX</a></td>
+                <td><a href="#TXA">TXA</a></td>
+                <td><a href="#TXS">TXS</a></td>
+                <td><a href="#TYA">TYA</a></td>
             </tr>
         </tbody>
     </table>
 
     <p>
-        <h2 id="ADC">ADC (Add With Carry)</h2>
-    <p>ADC TEXT</p>
+    <p><h2 id="ADC">ADC (Add With Carry)</h2></p>
+    <p>FLAGS: N V Z C</p>
+    <p>Immediate - Example: ADC #$25 - HEX: $69 - Length: 2 - Timing: 2</p>
+    <p>Zero Page - Example: ADC $25 - HEX: $65 - Length: 2 - Timing: 3</p>
+    <p>Zero Page, X - Example: ADC $25, X - HEX: $75 - Length: 2 - Timing: 4</p>
     <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <a href="#TOC">TO TABLE OF CONTENTS</a>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
 
 
     <p>
-        <h2 id="AND">AND</h2>
+    <p><h2 id="AND">AND</h2></p>
     <p>AND TEXT</p>
     <p><a href="#OP">TO OPCODE TABLE</a></p>
     <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
@@ -190,51 +193,259 @@
     <p><a href="#OP">TO OPCODE TABLE</a></p>
     <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
 
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
-    <p>This is a test for and</p>
+
+    <p>
+    <p><h2 id="CLD">CLD (Clear Decimal)</h2></p>
+    <p>CLD TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+
+    <p>
+    <p><h2 id="CLI">CLI (Clear Interrupt)</h2></p>
+    <p>CLI TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="CLV">CLV (Clear Overflow)</h2></p>
+    <p>CLV TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="CMP">CMP (Compare Accumulator Register)</h2></p>
+    <p>CMP TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="CPX">CPX (Compare X Register)</h2></p>
+    <p>CPX TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="CPY">CPY (Compare Y Register)</h2></p>
+    <p>CPY TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="DEC">DEC (Decrement Memory)</h2></p>
+    <p>DEC TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="DEX">DEX (Decrement Value in X Register)</h2></p>
+    <p>DEX TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="DEY">DEY (Decrement Value in Y Register)</h2></p>
+    <p>BNE TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="EOR">EOR (Bitwise Exclusive OR)</h2></p>
+    <p>EOR TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="INC">INC (Increment Memory)</h2></p>
+    <p>INC TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="INX">INX (Increment Value in X Register)</h2></p>
+    <p>INX TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="INY">INY (Increment Value in Y Register)</h2></p>
+    <p>INY TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="JMP">JMP (Jump To Address)</h2></p>
+    <p>JMP TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="JSR">JSR (Jump To Subroutine)</h2></p>
+    <p>JSR TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="LDA">LDA (Load Accumulator Register With Value)</h2></p>
+    <p>LDA TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="LDX">LDX (Load X Register With Value)</h2></p>
+    <p>LDX TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="LDY">LDY (Load Y Register With Value)</h2></p>
+    <p>LDY TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="LSR">LSR (Logical Shift Right)</h2></p>
+    <p>LSR TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="NOP">NOP (No Operation)</h2></p>
+    <p>NOP TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="ORA">ORA (Bitwise OR With Accumulator)</h2></p>
+    <p>ORA TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="PHA">PHA (Push Accumulator)</h2></p>
+    <p>PHA TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="PHP">PHP (Push Processor Status)</h2></p>
+    <p>PHP TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="PLA">PLA (Pull Accumulator)</h2></p>
+    <p>PLA TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="PLP">PLP (Pull Processor Status)</h2></p>
+    <p>PLP TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="ROL">ROL (Rotate Value Left)</h2></p>
+    <p>ROL TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="ROR">ROR (Rotate Value Right)</h2></p>
+    <p>INY TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="RTI">RTI (Return From Interrupt)</h2></p>
+    <p>RTI TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="RTS">RTS (Return To Subroutine)</h2></p>
+    <p>RTS TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="SBC">SBC (Subtract With Carry)</h2></p>
+    <p>SBC TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="SEC">SEC (Set Carry Flag)</h2></p>
+    <p>SEC TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="SED">SEC (Set Decimal Flag)</h2></p>
+    <p>SED TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="SEI">SEI (Set Interrupt Flag)</h2></p>
+    <p>SEI TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="STA">STA (Store In Accumulator Regsiter)</h2></p>
+    <p>STA TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="STX">STX (Store In X Regsiter)</h2></p>
+    <p>STX TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="STY">STY (Store In Y Regsiter)</h2></p>
+    <p>STY TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="TAX">TAX (Transfer Value in A Register To X Register)</h2></p>
+    <p>TAX TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="TAY">TAY (Transfer Value in A Register To Y Register)</h2></p>
+    <p>TAY TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="TSX">TSX (Transfer Stack Pointer To X Register)</h2></p>
+    <p>TSX TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="TXA">TXA (Transfer Value in X Register To A Register)</h2></p>
+    <p>TXA TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="TXS">TXS (Transfer X Register To Stack Pointer)</h2></p>
+    <p>TSX TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+
+    <p>
+    <p><h2 id="TYA">TYA (Transfer Value in Y Register To A Register)</h2></p>
+    <p>TYA TEXT</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
 
     <h2>Branch Table</h2>
     <h2>Processor Flags</h2>
