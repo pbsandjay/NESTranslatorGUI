@@ -1,0 +1,25 @@
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\bin\Debug\NES_Decom_GUI.exe.config
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\bin\Debug\NES_Decom_GUI.exe
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\bin\Debug\NES_Decom_GUI.pdb
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Debug\NES Translator GUI.csproj.AssemblyReference.cache
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Debug\NES_Decom_GUI.NESForm.resources
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Debug\NES_Decom_GUI.Properties.Resources.resources
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Debug\NES Translator GUI.csproj.GenerateResource.cache
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Debug\NES Translator GUI.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Debug\NES_Decom_GUI.exe
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Debug\NES_Decom_GUI.pdb
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Debug\NES_Decom.NESDisassemble.resources
+C:\Users\Jay\source\repos\NESTranslatorGUI\NES_Decom_GUI\bin\Debug\NES_Decom_GUI.exe.config
+C:\Users\Jay\source\repos\NESTranslatorGUI\NES_Decom_GUI\bin\Debug\NES_Decom_GUI.exe
+C:\Users\Jay\source\repos\NESTranslatorGUI\NES_Decom_GUI\bin\Debug\NES_Decom_GUI.pdb
+C:\Users\Jay\source\repos\NESTranslatorGUI\NES_Decom_GUI\obj\Debug\NES Translator GUI.csproj.AssemblyReference.cache
+C:\Users\Jay\source\repos\NESTranslatorGUI\NES_Decom_GUI\obj\Debug\NES_Decom_GUI.NESForm.resources
+C:\Users\Jay\source\repos\NESTranslatorGUI\NES_Decom_GUI\obj\Debug\NES_Decom.NESDisassemble.resources
+C:\Users\Jay\source\repos\NESTranslatorGUI\NES_Decom_GUI\obj\Debug\NES_Decom_GUI.Properties.Resources.resources
+C:\Users\Jay\source\repos\NESTranslatorGUI\NES_Decom_GUI\obj\Debug\NES Translator GUI.csproj.GenerateResource.cache
+C:\Users\Jay\source\repos\NESTranslatorGUI\NES_Decom_GUI\obj\Debug\NES Translator GUI.csproj.CoreCompileInputs.cache
+C:\Users\Jay\source\repos\NESTranslatorGUI\NES_Decom_GUI\obj\Debug\NES_Decom_GUI.exe
+C:\Users\Jay\source\repos\NESTranslatorGUI\NES_Decom_GUI\obj\Debug\NES_Decom_GUI.pdb
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Debug\NES_Decom_GUI.HexViewer.resources
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Debug\NES Translator GUI.csproj.SuggestedBindingRedirects.cache
+C:\Users\admin\Desktop\NESTranslatorGUI-main\NES_Decom_GUI\obj\Debug\NES_Decom_GUI.Documentation.resources
