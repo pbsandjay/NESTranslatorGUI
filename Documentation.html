@@ -27,15 +27,16 @@
 </head>
 <body>
     <h1 id="TOC">TABLE OF CONTENTS</h1>
-    <p><a href="#OP">6502 Opcode Table</a></p>
-    <p>Branch Table</p>
-    <p>Processor Status Flags</p>
-    <p>CPU Registers</p>
-    <p>CPU Memory Map</p>
+    <h2><a href="#OP">6502 Opcode Table</a></h2>
+    <h2><a href="#BRANCH">Branch Table</a></h2>
+    <h2><a href="#FLAG">Processor Status Flags</a></h2>
+    <h2><a href="#CPU">CPU Registers</a></h2>
+    <h2><a href="#CPUMEM">CPU Memory Map</a></h2>
+    <h2><a href="#STACK">Stack</a></h2>
     <p>&nbsp;</p>
     <p>&nbsp;</p>
     <p>&nbsp;</p>
-    <h1 id="OP">6502 Instruction Table</h1>
+    <h2 id="OP">6502 Instruction Table</h2>
     <table>
         <tbody>
             <tr>
@@ -106,351 +107,1424 @@
     </table>
 
     <p>
-    <p><h2 id="ADC">ADC (Add With Carry)</h2></p>
-    <p>FLAGS: N V Z C</p>
-    <p>Immediate - Example: ADC #$25 - HEX: $69 - Length: 2 - Timing: 2</p>
-    <p>Zero Page - Example: ADC $25 - HEX: $65 - Length: 2 - Timing: 3</p>
-    <p>Zero Page, X - Example: ADC $25, X - HEX: $75 - Length: 2 - Timing: 4</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p><h3 id="ADC">ADC (Add With Carry)</h3></p>
+    <p><a href="#FLAG"> FLAGS</a>: N V Z C</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Addressing Mode</th>
+                <th>Example Code</th>
+                <th>OPCODE Hex Value</th>
+                <th>OPCODE Length</th>
+                <th>CPU Timing</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Immediate</td>
+                <td>ADC #$25</td>
+                <td>$69</td>
+                <td>2</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Zero Page</td>
+                <td>ADC $25</td>
+                <td>$65</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Zero Page, X</td>
+                <td>ADC $25, X</td>
+                <td>$75</td>
+                <td>2</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Absolute</td>
+                <td>ADC $2500</td>
+                <td>$6D</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Absolute, X</td>
+                <td>ADC $2500, X</td>
+                <td>$7D</td>
+                <td>3</td>
+                <td>4*</td>
+            </tr>
+            <tr>
+                <td>Absolute, Y</td>
+                <td>ADC $2500, Y</td>
+                <td>$79</td>
+                <td>3</td>
+                <td>4*</td>
+            </tr>
+            <tr>
+                <td>Indirect, X</td>
+                <td>ADC ($25, X)</td>
+                <td>$61</td>
+                <td>2</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Indirect, Y</td>
+                <td>ADC ($25),Y</td>
+                <td>$71</td>
+                <td>2</td>
+                <td>5*</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>*If page boundary is crossed, add 1 CPU cycle</p>
+    <p><a href="#OP">Return to Table</a></p>
+    <p><a href="#TOC">Return to TOC</a></p>
+    <p>&nbsp;</p>
 
 
     <p>
-    <p><h2 id="AND">AND</h2></p>
-    <p>AND TEXT</p>
+    <p><h3 id="AND">AND</h3></p>
+    <p><a href="#FLAG"> FLAGS</a>: N Z</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Addressing Mode</th>
+                <th>Example Code</th>
+                <th>OPCODE Hex Value</th>
+                <th>OPCODE Length</th>
+                <th>CPU Timing</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Immediate</td>
+                <td>AND #$25</td>
+                <td>$29</td>
+                <td>2</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Zero Page</td>
+                <td>AND $25</td>
+                <td>$25</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Zero Page, X</td>
+                <td>AND $25, X</td>
+                <td>$35</td>
+                <td>2</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Absolute</td>
+                <td>AND $2500</td>
+                <td>$2D</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Absolute, X</td>
+                <td>AND $2500, X</td>
+                <td>$3D</td>
+                <td>3</td>
+                <td>4*</td>
+            </tr>
+            <tr>
+                <td>Absolute, Y</td>
+                <td>AND $2500, Y</td>
+                <td>$39</td>
+                <td>3</td>
+                <td>4*</td>
+            </tr>
+            <tr>
+                <td>Indirect, X</td>
+                <td>AND ($25, X)</td>
+                <td>$21</td>
+                <td>2</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Indirect, Y</td>
+                <td>AND ($25),Y</td>
+                <td>$31</td>
+                <td>2</td>
+                <td>5*</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>*If page boundary is crossed, add 1 CPU cycle</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="ASL">ASL (Arithmetic Shift Left)</h3></p>
+    <p><a href="#FLAG"> FLAGS</a>: N Z C</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Addressing Mode</th>
+                <th>Example Code</th>
+                <th>OPCODE Hex Value</th>
+                <th>OPCODE Length</th>
+                <th>CPU Timing</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Accumulator</td>
+                <td>ASL A</td>
+                <td>$0A</td>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Zero Page</td>
+                <td>ASL $25</td>
+                <td>$06</td>
+                <td>2</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Zero Page, X</td>
+                <td>ASL $25, X</td>
+                <td>$16</td>
+                <td>2</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Absolute</td>
+                <td>ASL $2500</td>
+                <td>$0E</td>
+                <td>3</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Absolute, X</td>
+                <td>ASL $2500, X</td>
+                <td>$1E</td>
+                <td>3</td>
+                <td>7</td>
+            </tr>
+        </tbody>
+    </table>
+    <p><a href="#OP">Return to Table</a></p>
+    <p><a href="#TOC">Return to TOC</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="BCC">BCC (Branch Carry Clear)</h3></p>
+    <h3><a href="#BRANCH">Branch Table</a></h3>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="BCS">BCS (Branch on Carry Set)</h3></p>
+    <h3><a href="#BRANCH">Branch Table</a></h3>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="BEQ">BEQ (Branch on Equal)</h3></p>
+    <h3><a href="#BRANCH">Branch Table</a></h3>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="BIT">BIT (BIT test)</h3></p>
+    <p><a href="#FLAG"> FLAGS</a>: N V Z</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Addressing Mode</th>
+                <th>Example Code</th>
+                <th>OPCODE Hex Value</th>
+                <th>OPCODE Length</th>
+                <th>CPU Timing</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Zero Page</td>
+                <td>BIT $25</td>
+                <td>$24</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Absolute</td>
+                <td>BIT $2500</td>
+                <td>$2C</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+        </tbody>
+    </table>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="BMI">BMI (Branch on Minus)</h3></p>
+    <h3><a href="#BRANCH">Branch Table</a></h3>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="BNE">BNE (Branch on Not Equal)</h3></p>
+    <h3><a href="#BRANCH">Branch Table</a></h3>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="BPL">BPL (Branch on Plus)</h3></p>
+    <h3><a href="#BRANCH">Branch Table</a></h3>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="BRK">BRK (Break)</h3></p>
+    <p><a href="#FLAG"> FLAGS</a>: B</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Addressing Mode</th>
+                <th>Example Code</th>
+                <th>OPCODE Hex Value</th>
+                <th>OPCODE Length</th>
+                <th>CPU Timing</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Implied</td>
+                <td>BRK</td>
+                <td>$00</td>
+                <td>1</td>
+                <td>7</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>Causes a non-maskable interrupt (NMI) and increases PC+1. RTI will return to the address of the BRK+2</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="BVC">BVC (Branch on Overflow Clear)</h3></p>
+    <h3><a href="#BRANCH">Branch Table</a></h3>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="BVS">BVS (Branch on Overflow Set)</h3></p>
+    <h3><a href="#BRANCH">Branch Table</a></h3>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="CLC">CLC (Clear Carry Flag)</h3></p>
+    <h3><a href="#FLAG">Processor Status Flag Table</a></h3>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+
+    <p>
+    <p><h3 id="CLD">CLD (Clear Decimal)</h3></p>
+    <h3><a href="#FLAG">Processor Status Flag Table</a></h3>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+
+    <p>
+    <p><h3 id="CLI">CLI (Clear Interrupt)</h3></p>
+    <h3><a href="#FLAG">Processor Status Flag Table</a></h3>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="CLV">CLV (Clear Overflow)</h3></p>
+    <h3><a href="#FLAG">Processor Status Flag Table</a></h3>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="CMP">CMP (Compare Accumulator Register)</h3></p>
+    <p><a href="#FLAG"> FLAGS</a>: N Z C</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Addressing Mode</th>
+                <th>Example Code</th>
+                <th>OPCODE Hex Value</th>
+                <th>OPCODE Length</th>
+                <th>CPU Timing</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Immediate</td>
+                <td>CMP #$25</td>
+                <td>$C9</td>
+                <td>2</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Zero Page</td>
+                <td>CMP $25</td>
+                <td>$C5</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Zero Page, X</td>
+                <td>CMP $25, X</td>
+                <td>$D5</td>
+                <td>2</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Absolute</td>
+                <td>CMP $2500</td>
+                <td>$CD</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Absolute, X</td>
+                <td>AND $2500, X</td>
+                <td>$DD</td>
+                <td>3</td>
+                <td>4*</td>
+            </tr>
+            <tr>
+                <td>Absolute, Y</td>
+                <td>CMP $2500, Y</td>
+                <td>$D9</td>
+                <td>3</td>
+                <td>4*</td>
+            </tr>
+            <tr>
+                <td>Indirect, X</td>
+                <td>CMP ($25, X)</td>
+                <td>$C1</td>
+                <td>2</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Indirect, Y</td>
+                <td>CMP ($25),Y</td>
+                <td>$D1</td>
+                <td>2</td>
+                <td>5*</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>*If page boundary is crossed, add 1 CPU cycle</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="CPX">CPX (Compare X Register)</h3></p>
+    <p><a href="#FLAG"> FLAGS</a>: N Z C</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Addressing Mode</th>
+                <th>Example Code</th>
+                <th>OPCODE Hex Value</th>
+                <th>OPCODE Length</th>
+                <th>CPU Timing</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Immediate</td>
+                <td>CPX #$25</td>
+                <td>$E0</td>
+                <td>2</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Zero Page</td>
+                <td>CPX $25</td>
+                <td>$E4</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Absolute</td>
+                <td>CPX $2500</td>
+                <td>$EC</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+        </tbody>
+    </table>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="CPY">CPY (Compare Y Register)</h3></p>
+    <p><a href="#FLAG"> FLAGS</a>: N Z C</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Addressing Mode</th>
+                <th>Example Code</th>
+                <th>OPCODE Hex Value</th>
+                <th>OPCODE Length</th>
+                <th>CPU Timing</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Immediate</td>
+                <td>CPY #$25</td>
+                <td>$C0</td>
+                <td>2</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Zero Page</td>
+                <td>CPY $25</td>
+                <td>$C4</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Absolute</td>
+                <td>CPY $2500</td>
+                <td>$CC</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+        </tbody>
+    </table>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="DEC">DEC (Decrement Memory)</h3></p>
+    <p><a href="#FLAG"> FLAGS</a>: N Z</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Addressing Mode</th>
+                <th>Example Code</th>
+                <th>OPCODE Hex Value</th>
+                <th>OPCODE Length</th>
+                <th>CPU Timing</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Zero Page</td>
+                <td>DEC $25</td>
+                <td>$C6</td>
+                <td>2</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Zero Page, X</td>
+                <td>DEC $25, X</td>
+                <td>$CE</td>
+                <td>3</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Absolute</td>
+                <td>DEC $2500</td>
+                <td>$CE</td>
+                <td>3</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Absolute, X</td>
+                <td>DEC $2500, X</td>
+                <td>$DE</td>
+                <td>3</td>
+                <td>7</td>
+            </tr>
+        </tbody>
+    </table>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="DEX">DEX (Decrement Value in X Register)</h3></p>
+    <p><a href="#FLAG"> FLAGS</a>: N Z</p>
+    <h3><a href="#CPU">CPU Registers</a></h3>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="DEY">DEY (Decrement Value in Y Register)</h3></p>
+    <p><a href="#FLAG"> FLAGS</a>: N Z</p>
+    <h3><a href="#CPU">CPU Registers</a></h3>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="EOR">EOR (Bitwise Exclusive OR)</h3></p>
+    <p><a href="#FLAG"> FLAGS</a>: N Z</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Addressing Mode</th>
+                <th>Example Code</th>
+                <th>OPCODE Hex Value</th>
+                <th>OPCODE Length</th>
+                <th>CPU Timing</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Immediate</td>
+                <td>EOR #$25</td>
+                <td>$49</td>
+                <td>2</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Zero Page</td>
+                <td>EOR $25</td>
+                <td>$CE</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Zero Page, X</td>
+                <td>EOR $25, X</td>
+                <td>$55</td>
+                <td>2</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Absolute</td>
+                <td>EOR $2500</td>
+                <td>$4D</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Absolute, X</td>
+                <td>EOR $2500, X</td>
+                <td>$5D</td>
+                <td>3</td>
+                <td>4*</td>
+            </tr>
+            <tr>
+                <td>Absolute, Y</td>
+                <td>EOR $2500, Y</td>
+                <td>$59</td>
+                <td>3</td>
+                <td>4*</td>
+            </tr>
+            <tr>
+                <td>Indirect, X</td>
+                <td>EOR ($25, X)</td>
+                <td>$41</td>
+                <td>2</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Indirect, y</td>
+                <td>EOR ($25), Y</td>
+                <td>$51</td>
+                <td>2</td>
+                <td>5*</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>*If page boundary is crossed, add 1 CPU cycle</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="INC">INC (Increment Memory)</h3></p>
+    <p><a href="#FLAG"> FLAGS</a>: N Z</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Addressing Mode</th>
+                <th>Example Code</th>
+                <th>OPCODE Hex Value</th>
+                <th>OPCODE Length</th>
+                <th>CPU Timing</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Zero Page</td>
+                <td>INC $25</td>
+                <td>$E6</td>
+                <td>2</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Zero Page, X</td>
+                <td>INC $25, X</td>
+                <td>$F6</td>
+                <td>2</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Absolute</td>
+                <td>INC $2500</td>
+                <td>$EE</td>
+                <td>3</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Absolute, X</td>
+                <td>INC $2500, X</td>
+                <td>$FE</td>
+                <td>3</td>
+                <td>7</td>
+            </tr>
+        </tbody>
+    </table>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="INX">INX (Increment Value in X Register)</h3></p>
+    <p><a href="#FLAG"> FLAGS</a>: N Z</p>
+    <h3><a href="#CPU">CPU Registers</a></h3>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="INY">INY (Increment Value in Y Register)</h3></p>
+    <p><a href="#FLAG"> FLAGS</a>: N Z</p>
+    <h3><a href="#CPU">CPU Registers</a></h3>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="JMP">JMP (Jump To Address)</h3></p>
+    <p>FLAGS: NONE</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Addressing Mode</th>
+                <th>Example Code</th>
+                <th>OPCODE Hex Value</th>
+                <th>OPCODE Length</th>
+                <th>CPU Timing</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Absolute</td>
+                <td>JMP $1800</td>
+                <td>$4C</td>
+                <td>3</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Indirect</td>
+                <td>JMP ($1800)</td>
+                <td>$6C</td>
+                <td>3</td>
+                <td>5</td>
+            </tr>
+        </tbody>
+    </table>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="JSR">JSR (Jump To Subroutine)</h3></p>
+    <p>FLAGS: NONE</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Addressing Mode</th>
+                <th>Example Code</th>
+                <th>OPCODE Hex Value</th>
+                <th>OPCODE Length</th>
+                <th>CPU Timing</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Absolute</td>
+                <td>JSR $1800</td>
+                <td>$20</td>
+                <td>3</td>
+                <td>6</td>
+            </tr>
+        </tbody>
+    </table>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="LDA">LDA (Load Accumulator Register)</h3></p>
+    <p><a href="#FLAG"> FLAGS</a>: N Z</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Addressing Mode</th>
+                <th>Example Code</th>
+                <th>OPCODE Hex Value</th>
+                <th>OPCODE Length</th>
+                <th>CPU Timing</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Immediate</td>
+                <td>LDA #$25</td>
+                <td>$A9</td>
+                <td>2</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Zero Page</td>
+                <td>LDA $25</td>
+                <td>$A5</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Zero Page, X</td>
+                <td>LDA $25, X</td>
+                <td>$B5</td>
+                <td>2</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Absolute</td>
+                <td>LDA $2500</td>
+                <td>$AD</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Absolute, X</td>
+                <td>LDA $2500, X</td>
+                <td>$8D</td>
+                <td>3</td>
+                <td>4*</td>
+            </tr>
+            <tr>
+                <td>Absolute, Y</td>
+                <td>LDA $2500, Y</td>
+                <td>$89</td>
+                <td>3</td>
+                <td>4*</td>
+            </tr>
+            <tr>
+                <td>Indirect, X</td>
+                <td>LDA ($25, X)</td>
+                <td>$A1</td>
+                <td>2</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Indirect, y</td>
+                <td>LDA ($25), Y</td>
+                <td>$B1</td>
+                <td>2</td>
+                <td>5*</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>*If page boundary is crossed, add 1 CPU cycle</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="LDX">LDX (Load X Register)</h3></p>
+    <p><a href="#FLAG"> FLAGS</a>: N Z</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Addressing Mode</th>
+                <th>Example Code</th>
+                <th>OPCODE Hex Value</th>
+                <th>OPCODE Length</th>
+                <th>CPU Timing</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Immediate</td>
+                <td>LDX #$25</td>
+                <td>$A2</td>
+                <td>2</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Zero Page</td>
+                <td>LDX $25</td>
+                <td>$A6</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Zero Page, Y</td>
+                <td>LDX $25, Y</td>
+                <td>$B6</td>
+                <td>2</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Absolute</td>
+                <td>LDX $2500</td>
+                <td>$AE</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Absolute, Y</td>
+                <td>LDX $2500, Y</td>
+                <td>$BE</td>
+                <td>3</td>
+                <td>4*</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>*If page boundary is crossed, add 1 CPU cycle</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="LDY">LDY (Load Y Register)</h3></p>
+    <p><a href="#FLAG"> FLAGS</a>: N Z</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Addressing Mode</th>
+                <th>Example Code</th>
+                <th>OPCODE Hex Value</th>
+                <th>OPCODE Length</th>
+                <th>CPU Timing</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Immediate</td>
+                <td>LDY #$25</td>
+                <td>$A0</td>
+                <td>2</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Zero Page</td>
+                <td>LDY $25</td>
+                <td>$A4</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Zero Page, X</td>
+                <td>LDY $25, X</td>
+                <td>$B4</td>
+                <td>2</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Absolute</td>
+                <td>LDY $2500</td>
+                <td>$AC</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Absolute, X</td>
+                <td>LDA $2500, X</td>
+                <td>$BC</td>
+                <td>3</td>
+                <td>4*</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>*If page boundary is crossed, add 1 CPU cycle</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="LSR">LSR (Logical Shift Right)</h3></p>
+    <p><a href="#FLAG"> FLAGS</a>: N Z C</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Addressing Mode</th>
+                <th>Example Code</th>
+                <th>OPCODE Hex Value</th>
+                <th>OPCODE Length</th>
+                <th>CPU Timing</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Accumulator</td>
+                <td>LSR A</td>
+                <td>$4A</td>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Zero Page</td>
+                <td>LSR $25</td>
+                <td>$46</td>
+                <td>2</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Zero Page, X</td>
+                <td>LSR $25, X</td>
+                <td>$56</td>
+                <td>2</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Absolute</td>
+                <td>LSR $2500</td>
+                <td>$4E</td>
+                <td>3</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Absolute, X</td>
+                <td>LSR $2500, X</td>
+                <td>$5E</td>
+                <td>3</td>
+                <td>7</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>Shifts all bits right one place. Bit 7 is replaced by 0. Original bit placed in Bit-0 is placed in Carry</p>
+    <p>Example: 010110100 Carry: 0 becomes 001011010 Carry: 0</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="NOP">NOP (No Operation)</h3></p>
+    <p>FLAGS: NONE</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Addressing Mode</th>
+                <th>Example Code</th>
+                <th>OPCODE Hex Value</th>
+                <th>OPCODE Length</th>
+                <th>CPU Timing</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Implied</td>
+                <td>NOP</td>
+                <td>$EA</td>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+        </tbody>
+    </table>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="ORA">ORA (Bitwise OR With Accumulator)</h3></p>
+    <p><a href="#FLAG"> FLAGS</a>: N Z</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Addressing Mode</th>
+                <th>Example Code</th>
+                <th>OPCODE Hex Value</th>
+                <th>OPCODE Length</th>
+                <th>CPU Timing</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Immediate</td>
+                <td>ORA #$25</td>
+                <td>$09</td>
+                <td>2</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Zero Page</td>
+                <td>ORA $25</td>
+                <td>$05</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Zero Page, X</td>
+                <td>ORA $25, X</td>
+                <td>$15</td>
+                <td>2</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Absolute</td>
+                <td>ORA $2500</td>
+                <td>$0D</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Absolute, X</td>
+                <td>ORA $2500, X</td>
+                <td>$1D</td>
+                <td>3</td>
+                <td>4*</td>
+            </tr>
+            <tr>
+                <td>Absolute, Y</td>
+                <td>ORA $2500, Y</td>
+                <td>$19</td>
+                <td>3</td>
+                <td>4*</td>
+            </tr>
+            <tr>
+                <td>Indirect, X</td>
+                <td>ORA ($25, X)</td>
+                <td>$01</td>
+                <td>2</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Indirect, Y</td>
+                <td>ORA ($25), Y</td>
+                <td>$11</td>
+                <td>3</td>
+                <td>5*</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>*If page boundary is crossed, add 1 CPU cycle</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="PHA">PHA (Push Accumulator)</h3></p>
+    <p>FLAGS: NONE</p>
+    <h3><a href="#STACK">Stack</a></h3>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="PHP">PHP (Push Processor Status)</h3></p>
+    <p>FLAGS: NONE</p>
+    <h3><a href="#STACK">Stack</a></h3>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="PLA">PLA (Pull Accumulator)</h3></p>
+    <p>FLAGS: NONE</p>
+    <h3><a href="#STACK">Stack</a></h3>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="PLP">PLP (Pull Processor Status)</h3></p>
+    <p>FLAGS: NONE</p>
+    <h3><a href="#STACK">Stack</a></h3>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="ROL">ROL (Rotate Bits Left)</h3></p>
+    <p><a href="#FLAG"> FLAGS</a>: N Z C</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Addressing Mode</th>
+                <th>Example Code</th>
+                <th>OPCODE Hex Value</th>
+                <th>OPCODE Length</th>
+                <th>CPU Timing</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Accumulator</td>
+                <td>ROL A</td>
+                <td>$2A</td>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Zero Page</td>
+                <td>ROL $25</td>
+                <td>$26</td>
+                <td>2</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Zero Page, X</td>
+                <td>ROL $25, X</td>
+                <td>$36</td>
+                <td>2</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Absolute</td>
+                <td>ROL $2500</td>
+                <td>$2E</td>
+                <td>3</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Absolute, X</td>
+                <td>ROL $2500, X</td>
+                <td>$3E</td>
+                <td>3</td>
+                <td>7</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>Shifts all bits left one place. Carry bit is shifted into Bit-0. Then Bit 7 is placed into Carry.</p>
+    <p>Example: 010110100 Carry: 1 becomes 101101001 Carry: 0</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="ROR">ROR (Rotate Bits Right)</h3></p>
+    <p><a href="#FLAG"> FLAGS</a>: N Z C</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Addressing Mode</th>
+                <th>Example Code</th>
+                <th>OPCODE Hex Value</th>
+                <th>OPCODE Length</th>
+                <th>CPU Timing</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Accumulator</td>
+                <td>ROR A</td>
+                <td>$6A</td>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Zero Page</td>
+                <td>ROR $25</td>
+                <td>$66</td>
+                <td>2</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Zero Page, X</td>
+                <td>ROR $25, X</td>
+                <td>$76</td>
+                <td>2</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Absolute</td>
+                <td>ROR $2500</td>
+                <td>$6E</td>
+                <td>3</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Absolute, X</td>
+                <td>ROR $2500, X</td>
+                <td>$7E</td>
+                <td>3</td>
+                <td>7</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>Shifts all bits right one place. Bit 7 is replaced by Carry. Original bit placed in Bit-0 is placed in Carry</p>
+    <p>Example: 010110100 Carry: 1 becomes 11011010 Carry: 0</p>
+    <p><a href="#OP">TO OPCODE TABLE</a></p>
+    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
+
+    <p>
+    <p><h3 id="RTI">RTI (Return From Interrupt)</h3></p>
+    <p>FLAGS: NONE</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Addressing Mode</th>
+                <th>Example Code</th>
+                <th>OPCODE Hex Value</th>
+                <th>OPCODE Length</th>
+                <th>CPU Timing</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Implied</td>
+                <td>RTI</td>
+                <td>$40</td>
+                <td>1</td>
+                <td>6</td>
+            </tr>
+        </tbody>
+    </table>
     <p><a href="#OP">TO OPCODE TABLE</a></p>
     <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
 
     <p>
-    <p><h2 id="ASL">ASL (Arithmetic Shift Left)</h2></p>
-    <p>ASL TEXT</p>
+    <p><h3 id="RTS">RTS (Return To Subroutine)</h3></p>
+    <p>FLAGS: NONE</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Addressing Mode</th>
+                <th>Example Code</th>
+                <th>OPCODE Hex Value</th>
+                <th>OPCODE Length</th>
+                <th>CPU Timing</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Implied</td>
+                <td>RTS</td>
+                <td>$60</td>
+                <td>1</td>
+                <td>6</td>
+            </tr>
+        </tbody>
+    </table>
     <p><a href="#OP">TO OPCODE TABLE</a></p>
     <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
+    <p>&nbsp;</p>
 
     <p>
-    <p><h2 id="BCC">BCC (Branch Carry Clear)</h2></p>
-    <p>BCC TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="BCS">BCS (Branch on Carry Set)</h2></p>
-    <p>BCS TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="BEQ">BEQ (Branch on Equal)</h2></p>
-    <p>BEQ TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="BIT">BIT (BIT test)</h2></p>
-    <p>BIT TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="BMI">BMI (Branch on Minus)</h2></p>
-    <p>BMI TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="BNE">BNE (Branch on Not Equal)</h2></p>
-    <p>BNE TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="BPL">BPL (Branch on Plus)</h2></p>
-    <p>BPL TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="BRK">BRK (Break)</h2></p>
-    <p>Break TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="BVC">BVC (Branch on Overflow Clear)</h2></p>
-    <p>BCV TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="BVS">BVS (Branch on Overflow Set)</h2></p>
-    <p>BVS TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="CLC">CLC (Clear Carry Flag)</h2></p>
-    <p>CLC TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-
-    <p>
-    <p><h2 id="CLD">CLD (Clear Decimal)</h2></p>
-    <p>CLD TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-
-    <p>
-    <p><h2 id="CLI">CLI (Clear Interrupt)</h2></p>
-    <p>CLI TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="CLV">CLV (Clear Overflow)</h2></p>
-    <p>CLV TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="CMP">CMP (Compare Accumulator Register)</h2></p>
-    <p>CMP TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="CPX">CPX (Compare X Register)</h2></p>
-    <p>CPX TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="CPY">CPY (Compare Y Register)</h2></p>
-    <p>CPY TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="DEC">DEC (Decrement Memory)</h2></p>
-    <p>DEC TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="DEX">DEX (Decrement Value in X Register)</h2></p>
-    <p>DEX TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="DEY">DEY (Decrement Value in Y Register)</h2></p>
-    <p>BNE TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="EOR">EOR (Bitwise Exclusive OR)</h2></p>
-    <p>EOR TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="INC">INC (Increment Memory)</h2></p>
-    <p>INC TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="INX">INX (Increment Value in X Register)</h2></p>
-    <p>INX TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="INY">INY (Increment Value in Y Register)</h2></p>
-    <p>INY TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="JMP">JMP (Jump To Address)</h2></p>
-    <p>JMP TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="JSR">JSR (Jump To Subroutine)</h2></p>
-    <p>JSR TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="LDA">LDA (Load Accumulator Register With Value)</h2></p>
-    <p>LDA TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="LDX">LDX (Load X Register With Value)</h2></p>
-    <p>LDX TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="LDY">LDY (Load Y Register With Value)</h2></p>
-    <p>LDY TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="LSR">LSR (Logical Shift Right)</h2></p>
-    <p>LSR TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="NOP">NOP (No Operation)</h2></p>
-    <p>NOP TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="ORA">ORA (Bitwise OR With Accumulator)</h2></p>
-    <p>ORA TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="PHA">PHA (Push Accumulator)</h2></p>
-    <p>PHA TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="PHP">PHP (Push Processor Status)</h2></p>
-    <p>PHP TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="PLA">PLA (Pull Accumulator)</h2></p>
-    <p>PLA TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="PLP">PLP (Pull Processor Status)</h2></p>
-    <p>PLP TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="ROL">ROL (Rotate Value Left)</h2></p>
-    <p>ROL TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="ROR">ROR (Rotate Value Right)</h2></p>
-    <p>INY TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="RTI">RTI (Return From Interrupt)</h2></p>
-    <p>RTI TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="RTS">RTS (Return To Subroutine)</h2></p>
-    <p>RTS TEXT</p>
-    <p><a href="#OP">TO OPCODE TABLE</a></p>
-    <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
-
-    <p>
-    <p><h2 id="SBC">SBC (Subtract With Carry)</h2></p>
+    <p><h3 id="SBC">SBC (Subtract With Carry)</h3></p>
     <p>SBC TEXT</p>
     <p><a href="#OP">TO OPCODE TABLE</a></p>
     <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
 
     <p>
-    <p><h2 id="SEC">SEC (Set Carry Flag)</h2></p>
+    <p><h3 id="SEC">SEC (Set Carry Flag)</h3></p>
     <p>SEC TEXT</p>
     <p><a href="#OP">TO OPCODE TABLE</a></p>
     <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
 
     <p>
-    <p><h2 id="SED">SEC (Set Decimal Flag)</h2></p>
+    <p><h3 id="SED">SEC (Set Decimal Flag)</h3></p>
     <p>SED TEXT</p>
     <p><a href="#OP">TO OPCODE TABLE</a></p>
     <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
 
     <p>
-    <p><h2 id="SEI">SEI (Set Interrupt Flag)</h2></p>
+    <p><h3 id="SEI">SEI (Set Interrupt Flag)</h3></p>
     <p>SEI TEXT</p>
     <p><a href="#OP">TO OPCODE TABLE</a></p>
     <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
 
     <p>
-    <p><h2 id="STA">STA (Store In Accumulator Regsiter)</h2></p>
+    <p><h3 id="STA">STA (Store In Accumulator Regsiter)</h3></p>
     <p>STA TEXT</p>
     <p><a href="#OP">TO OPCODE TABLE</a></p>
     <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
 
     <p>
-    <p><h2 id="STX">STX (Store In X Regsiter)</h2></p>
+    <p><h3 id="STX">STX (Store In X Regsiter)</h3></p>
     <p>STX TEXT</p>
     <p><a href="#OP">TO OPCODE TABLE</a></p>
     <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
 
     <p>
-    <p><h2 id="STY">STY (Store In Y Regsiter)</h2></p>
+    <p><h3 id="STY">STY (Store In Y Regsiter)</h3></p>
     <p>STY TEXT</p>
     <p><a href="#OP">TO OPCODE TABLE</a></p>
     <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
 
     <p>
-    <p><h2 id="TAX">TAX (Transfer Value in A Register To X Register)</h2></p>
+    <p><h3 id="TAX">TAX (Transfer Value in A Register To X Register)</h3></p>
     <p>TAX TEXT</p>
     <p><a href="#OP">TO OPCODE TABLE</a></p>
     <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
 
     <p>
-    <p><h2 id="TAY">TAY (Transfer Value in A Register To Y Register)</h2></p>
+    <p><h3 id="TAY">TAY (Transfer Value in A Register To Y Register)</h3></p>
     <p>TAY TEXT</p>
     <p><a href="#OP">TO OPCODE TABLE</a></p>
     <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
 
     <p>
-    <p><h2 id="TSX">TSX (Transfer Stack Pointer To X Register)</h2></p>
+    <p><h3 id="TSX">TSX (Transfer Stack Pointer To X Register)</h3></p>
     <p>TSX TEXT</p>
     <p><a href="#OP">TO OPCODE TABLE</a></p>
     <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
 
     <p>
-    <p><h2 id="TXA">TXA (Transfer Value in X Register To A Register)</h2></p>
+    <p><h3 id="TXA">TXA (Transfer Value in X Register To A Register)</h3></p>
     <p>TXA TEXT</p>
     <p><a href="#OP">TO OPCODE TABLE</a></p>
     <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
 
     <p>
-    <p><h2 id="TXS">TXS (Transfer X Register To Stack Pointer)</h2></p>
+    <p><h3 id="TXS">TXS (Transfer X Register To Stack Pointer)</h3></p>
     <p>TSX TEXT</p>
     <p><a href="#OP">TO OPCODE TABLE</a></p>
     <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
 
     <p>
-    <p><h2 id="TYA">TYA (Transfer Value in Y Register To A Register)</h2></p>
+    <p><h3 id="TYA">TYA (Transfer Value in Y Register To A Register)</h3></p>
     <p>TYA TEXT</p>
     <p><a href="#OP">TO OPCODE TABLE</a></p>
     <p><a href="#TOC">TO TABLE OF CONTENTS</a></p>
 
-    <h2>Branch Table</h2>
-    <h2>Processor Flags</h2>
-    <h2>CPU Registers</h2>
-    <h2>CPU Memory Map</h2>
+    <h2 id="BRANCH">Branch Table</h2>
+    <p>&nbsp;</p>
+    <h2 id="FLAG">Processor Status Flag Table</h2>
+    <p>&nbsp;</p>
+    <h2 id="CPU">CPU Registers</h2>
+    <p>&nbsp;</p>
+    <h2 id="CPUMEM">CPU Memory Map</h2>
+    <p>&nbsp;</p>
+    <h2 id="Stack">Stack</h2>
 
 </body>
 </html>

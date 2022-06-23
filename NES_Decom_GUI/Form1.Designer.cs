@@ -62,7 +62,6 @@ namespace NES_Decom_GUI
             this.Mappertxt = new System.Windows.Forms.TextBox();
             this.CreateFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.hexBtn = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.docBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -342,15 +341,6 @@ namespace NES_Decom_GUI
             this.hexBtn.UseVisualStyleBackColor = true;
             this.hexBtn.Click += new System.EventHandler(this.hexBtn_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(27, 7);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(8, 8);
-            this.button2.TabIndex = 32;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // toolTip1
             // 
             this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
@@ -373,7 +363,6 @@ namespace NES_Decom_GUI
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(819, 330);
             this.Controls.Add(this.docBtn);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.hexBtn);
             this.Controls.Add(this.Mappertxt);
             this.Controls.Add(this.CHRtxt);
@@ -444,7 +433,6 @@ namespace NES_Decom_GUI
         private System.Windows.Forms.TextBox Mappertxt;
         private System.Windows.Forms.SaveFileDialog CreateFileDialog;
         private System.Windows.Forms.Button hexBtn;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button docBtn;
     }

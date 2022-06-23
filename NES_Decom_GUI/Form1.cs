@@ -25,7 +25,7 @@ namespace NES_Decom_GUI
             TextDirectory.Text = ""; //Text File Directory?
             ROMDirectory.Text = ""; //ROM Directory?
             translate_Btn.Enabled = false;
-            //hexBtn.Enabled = false;
+            hexBtn.Enabled = false;
 
         }
 
@@ -46,13 +46,11 @@ namespace NES_Decom_GUI
 
         public void ROMSel_Click(object sender, EventArgs e)
         {
-
             OpenFileDialog ROMSel = new OpenFileDialog();
             ROMSel.Filter = "NES ROM Files (*.nes)|*.nes";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             string RomNotSelected = "ROM file not selected, try again?";
             string RomError = "ERROR";
-
             bool RomSelector = true;
             while (RomSelector == true)
             {
@@ -60,6 +58,7 @@ namespace NES_Decom_GUI
                 {
                     ROMDirectory.Text = ROMSel.FileName;
                     RomSelector = false;
+                    hexBtn.Enabled = true;
                 }
                 else
                 {
@@ -67,6 +66,7 @@ namespace NES_Decom_GUI
                     if (result == DialogResult.Yes)
                     {
                         RomSelector = true;
+                        hexBtn.Enabled = false;
                     }
 
                     else
@@ -92,6 +92,7 @@ namespace NES_Decom_GUI
             string TxtError = "ERROR";
 
             bool TxtSelector = true;
+
 
             while (TxtSelector == true)
             {
@@ -123,12 +124,12 @@ namespace NES_Decom_GUI
                     if (result == DialogResult.No)
                     {
                         TxtSelector = false;
+
                     }
-                    translate_Btn.Enabled = false;
                 }
             }
         }
-
+                    
         public void sram_Lb_Click(object sender, EventArgs e)
         {
 
@@ -350,8 +351,10 @@ namespace NES_Decom_GUI
             bv.SetFile(Convert.ToString(ROMDirectory.Text));
             Hex.Controls.Add(bv);
             Hex.AutoScroll = true;
+
             
-           
+
+
 
 
         }
